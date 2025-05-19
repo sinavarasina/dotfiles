@@ -1,0 +1,173 @@
+#waybar {
+    background-color: rgba(30, 15, 30, 0.95);
+    border-bottom: 3px solid #ff6b9e;
+    border-radius: 0;
+    font-family: "M PLUS 1", "Noto Sans", sans-serif;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: #ff9ab8;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 107, 158, 0.3);
+}
+
+#workspaces button.active {
+    background-color: #d45a7d;
+    border-radius: 12px;
+    color: white; 
+    animation: ws_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.focused {
+    color: white;
+    background-color: #ff6b9e;
+    border-radius: 8px;
+    text-shadow: 0 0 8px rgba(255, 107, 158, 0.8);
+    box-shadow: inset 0 -3px 0 rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button:hover {
+    background-color: #d45a7d;
+    color: white;
+}
+
+#clock, #cpu, #memory, #pulseaudio, #tray,
+#temperature, #idle_inhibitor, #custom-power,
+#custom-media, #custom-polytiramisu, #network {
+    padding: 0 12px;
+    margin: 0 4px;
+    background-color: rgba(50, 25, 50, 0.8);
+    border-radius: 8px;
+    border: 1px solid #ff6b9e;
+    color: #ffc0d5;
+    font-weight: bold;
+}
+
+#clock {
+    background-color: #ff6b9e;
+    color: #1e0f1e;
+    font-weight: 800;
+}
+
+#pulseaudio.muted {
+    color: #ff285c;
+    background-color: rgba(80, 20, 50, 0.8);
+}
+
+#battery {
+    color: #ff6b9e;
+    background-color: rgba(50, 25, 50, 0.8);
+    padding: 0 12px;
+}
+
+#battery.charging {
+    color: #a5ffa5;
+    background-image: linear-gradient(to right, 
+        rgba(165, 255, 165, 0.1), 
+        rgba(165, 255, 165, 0.3));
+}
+
+#battery.critical {
+    color: #ff285c;
+    animation: blink 1s linear infinite;
+}
+
+#window, #custom-hyprland_window_scroll {
+    color: #ffc0d5;
+    font-size: 12px;
+    font-style: italic;
+    padding: 0 4px;
+    text-shadow: 0 0 5px rgba(255, 107, 158, 0.5);
+}
+
+#tray {
+    background-color: rgba(255, 107, 158, 0.15);
+    border: 1px solid rgba(255, 107, 158, 0.3);
+}
+
+#custom-logo {
+    background-image: url('/home/sina/.config/waybar/logo/gentoo-signet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 24px; 
+    min-height: 24px;
+    padding: 0 12px;
+    background-color: rgba(255, 107, 158, 0.3);
+    border-radius: 0 8px 8px 0;
+
+}
+
+/*
+    min-width: 24px; 
+    min-height: 24px; 
+    margin: 0 10px;
+    padding: 0 12px;
+    margin-right: 8px;
+    background-color: rgba(255, 107, 158, 0.3);
+    border-radius: 0 8px 8px 0;
+*/
+#idle_inhibitor {
+    color: #ff9ab8;
+}
+
+#idle_inhibitor.activated {
+    color: #ff6b9e;
+    background-color: rgba(255, 107, 158, 0.2);
+}
+
+#temperature {
+    color: #ffb8d9;
+}
+
+#temperature.critical {
+    color: #ff285c;
+    animation: pulse 0.5s ease-in-out infinite alternate;
+}
+
+#cpu, #memory {
+    color: #ffb8d9;
+}
+
+#cpu.high, #memory.high {
+    color: #ff6b9e;
+}
+
+#custom-media {
+    color: #ff9ab8;
+    font-style: italic;
+}
+
+#custom-media.spotify {
+    color: #1db954;
+}
+
+#custom-power {
+    background-color: rgba(255, 107, 158, 0.3);
+    color: #ff285c;
+    margin-left: 8px;
+    padding: 0 16px;
+}
+
+#custom-polytiramisu {
+    color: #ffc0d5;
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    font-style: italic;
+    padding: 0 15px;
+}
+
+/* Animations */
+@keyframes blink {
+    50% { opacity: 0.3; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}

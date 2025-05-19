@@ -110,7 +110,7 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 # APPEARANCE & PROMPT
 #------------------------------------------------------------------------------
 # System information display
-fastfetch -c ~/.config/fastfetch/my_dr460nized.jsonc
+fastfetch # -c ~/.config/fastfetch/my_dr460nized.jsonc
 
 # Initialize Oh-My-Posh prompt
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell.sinamod.omp.json)"

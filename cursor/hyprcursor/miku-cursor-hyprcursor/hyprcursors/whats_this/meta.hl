@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.41
+hotspot_y = 0.38
+
+define_size = 32, whats_this_000.png, 116
+define_size = 48, whats_this_001.png, 116
+define_size = 64, whats_this_002.png, 116
+define_size = 96, whats_this_003.png, 116
+define_size = 32, whats_this_004.png, 116
+define_size = 48, whats_this_005.png, 116
+define_size = 64, whats_this_006.png, 116
+define_size = 96, whats_this_007.png, 116
+define_size = 32, whats_this_008.png, 116
+define_size = 48, whats_this_009.png, 116
+define_size = 64, whats_this_010.png, 116
+define_size = 96, whats_this_011.png, 116
+define_size = 32, whats_this_012.png, 116
+define_size = 48, whats_this_013.png, 116
+define_size = 64, whats_this_014.png, 116
+define_size = 96, whats_this_015.png, 116
+define_size = 32, whats_this_016.png, 116
+define_size = 48, whats_this_017.png, 116
+define_size = 64, whats_this_018.png, 116
+define_size = 96, whats_this_019.png, 116
+define_size = 32, whats_this_020.png, 116
+define_size = 48, whats_this_021.png, 116
+define_size = 64, whats_this_022.png, 116
+define_size = 96, whats_this_023.png, 116
+define_size = 32, whats_this_024.png, 116
+define_size = 48, whats_this_025.png, 116
+define_size = 64, whats_this_026.png, 116
+define_size = 96, whats_this_027.png, 116
+define_size = 32, whats_this_028.png, 116
+define_size = 48, whats_this_029.png, 116
+define_size = 64, whats_this_030.png, 116
+define_size = 96, whats_this_031.png, 116
+

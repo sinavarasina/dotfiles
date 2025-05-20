@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.00
+hotspot_y = 0.00
+
+define_size = 32, link_000.png, 116
+define_size = 48, link_001.png, 116
+define_size = 64, link_002.png, 116
+define_size = 96, link_003.png, 116
+define_size = 32, link_004.png, 116
+define_size = 48, link_005.png, 116
+define_size = 64, link_006.png, 116
+define_size = 96, link_007.png, 116
+define_size = 32, link_008.png, 116
+define_size = 48, link_009.png, 116
+define_size = 64, link_010.png, 116
+define_size = 96, link_011.png, 116
+define_size = 32, link_012.png, 116
+define_size = 48, link_013.png, 116
+define_size = 64, link_014.png, 116
+define_size = 96, link_015.png, 116
+define_size = 32, link_016.png, 116
+define_size = 48, link_017.png, 116
+define_size = 64, link_018.png, 116
+define_size = 96, link_019.png, 116
+define_size = 32, link_020.png, 116
+define_size = 48, link_021.png, 116
+define_size = 64, link_022.png, 116
+define_size = 96, link_023.png, 116
+define_size = 32, link_024.png, 116
+define_size = 48, link_025.png, 116
+define_size = 64, link_026.png, 116
+define_size = 96, link_027.png, 116
+define_size = 32, link_028.png, 116
+define_size = 48, link_029.png, 116
+define_size = 64, link_030.png, 116
+define_size = 96, link_031.png, 116
+

@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.41
+hotspot_y = 0.38
+
+define_size = 32, question_arrow_000.png, 116
+define_size = 48, question_arrow_001.png, 116
+define_size = 64, question_arrow_002.png, 116
+define_size = 96, question_arrow_003.png, 116
+define_size = 32, question_arrow_004.png, 116
+define_size = 48, question_arrow_005.png, 116
+define_size = 64, question_arrow_006.png, 116
+define_size = 96, question_arrow_007.png, 116
+define_size = 32, question_arrow_008.png, 116
+define_size = 48, question_arrow_009.png, 116
+define_size = 64, question_arrow_010.png, 116
+define_size = 96, question_arrow_011.png, 116
+define_size = 32, question_arrow_012.png, 116
+define_size = 48, question_arrow_013.png, 116
+define_size = 64, question_arrow_014.png, 116
+define_size = 96, question_arrow_015.png, 116
+define_size = 32, question_arrow_016.png, 116
+define_size = 48, question_arrow_017.png, 116
+define_size = 64, question_arrow_018.png, 116
+define_size = 96, question_arrow_019.png, 116
+define_size = 32, question_arrow_020.png, 116
+define_size = 48, question_arrow_021.png, 116
+define_size = 64, question_arrow_022.png, 116
+define_size = 96, question_arrow_023.png, 116
+define_size = 32, question_arrow_024.png, 116
+define_size = 48, question_arrow_025.png, 116
+define_size = 64, question_arrow_026.png, 116
+define_size = 96, question_arrow_027.png, 116
+define_size = 32, question_arrow_028.png, 116
+define_size = 48, question_arrow_029.png, 116
+define_size = 64, question_arrow_030.png, 116
+define_size = 96, question_arrow_031.png, 116
+

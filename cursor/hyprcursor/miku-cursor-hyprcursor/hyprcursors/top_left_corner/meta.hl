@@ -1,0 +1,12 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.47
+
+define_size = 32, top_left_corner_000.png, 166
+define_size = 48, top_left_corner_001.png, 166
+define_size = 64, top_left_corner_002.png, 166
+define_size = 96, top_left_corner_003.png, 166
+
+define_override = nw-resize
+define_override = nwse-resize
+define_override = ul_angle

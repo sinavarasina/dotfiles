@@ -1,0 +1,9 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.47
+
+define_size = 32, draped_box_000.png, 333
+define_size = 48, draped_box_001.png, 333
+define_size = 64, draped_box_002.png, 333
+define_size = 96, draped_box_003.png, 333
+

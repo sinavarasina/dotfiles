@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.00
+hotspot_y = 0.00
+
+define_size = 32, arrow_000.png, 116
+define_size = 48, arrow_001.png, 116
+define_size = 64, arrow_002.png, 116
+define_size = 96, arrow_003.png, 116
+define_size = 32, arrow_004.png, 116
+define_size = 48, arrow_005.png, 116
+define_size = 64, arrow_006.png, 116
+define_size = 96, arrow_007.png, 116
+define_size = 32, arrow_008.png, 116
+define_size = 48, arrow_009.png, 116
+define_size = 64, arrow_010.png, 116
+define_size = 96, arrow_011.png, 116
+define_size = 32, arrow_012.png, 116
+define_size = 48, arrow_013.png, 116
+define_size = 64, arrow_014.png, 116
+define_size = 96, arrow_015.png, 116
+define_size = 32, arrow_016.png, 116
+define_size = 48, arrow_017.png, 116
+define_size = 64, arrow_018.png, 116
+define_size = 96, arrow_019.png, 116
+define_size = 32, arrow_020.png, 116
+define_size = 48, arrow_021.png, 116
+define_size = 64, arrow_022.png, 116
+define_size = 96, arrow_023.png, 116
+define_size = 32, arrow_024.png, 116
+define_size = 48, arrow_025.png, 116
+define_size = 64, arrow_026.png, 116
+define_size = 96, arrow_027.png, 116
+define_size = 32, arrow_028.png, 116
+define_size = 48, arrow_029.png, 116
+define_size = 64, arrow_030.png, 116
+define_size = 96, arrow_031.png, 116
+

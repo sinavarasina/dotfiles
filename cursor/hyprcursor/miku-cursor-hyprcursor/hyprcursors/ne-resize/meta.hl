@@ -1,0 +1,11 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.50
+
+define_size = 32, ne-resize_000.png, 166
+define_size = 48, ne-resize_001.png, 166
+define_size = 64, ne-resize_002.png, 166
+define_size = 96, ne-resize_003.png, 166
+
+define_override = ll_angle
+define_override = nesw-resize

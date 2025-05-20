@@ -1,0 +1,11 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.50
+
+define_size = 32, top_side_000.png, 333
+define_size = 48, top_side_001.png, 333
+define_size = 64, top_side_002.png, 333
+define_size = 96, top_side_003.png, 333
+
+define_override = top_tee
+define_override = v_double_arrow

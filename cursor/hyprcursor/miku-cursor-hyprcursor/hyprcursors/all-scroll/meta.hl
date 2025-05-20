@@ -1,0 +1,11 @@
+resize_algorithm = none
+hotspot_x = 0.44
+hotspot_y = 0.50
+
+define_size = 32, all-scroll_000.png, 333
+define_size = 48, all-scroll_001.png, 333
+define_size = 64, all-scroll_002.png, 333
+define_size = 96, all-scroll_003.png, 333
+
+define_override = 4498f0e0c1937ffe01fd06f973665830
+define_override = 9081237383d90e509aa00f00170e968f

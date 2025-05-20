@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.00
+hotspot_y = 0.00
+
+define_size = 32, watch_000.png, 116
+define_size = 48, watch_001.png, 116
+define_size = 64, watch_002.png, 116
+define_size = 96, watch_003.png, 116
+define_size = 32, watch_004.png, 116
+define_size = 48, watch_005.png, 116
+define_size = 64, watch_006.png, 116
+define_size = 96, watch_007.png, 116
+define_size = 32, watch_008.png, 116
+define_size = 48, watch_009.png, 116
+define_size = 64, watch_010.png, 116
+define_size = 96, watch_011.png, 116
+define_size = 32, watch_012.png, 116
+define_size = 48, watch_013.png, 116
+define_size = 64, watch_014.png, 116
+define_size = 96, watch_015.png, 116
+define_size = 32, watch_016.png, 116
+define_size = 48, watch_017.png, 116
+define_size = 64, watch_018.png, 116
+define_size = 96, watch_019.png, 116
+define_size = 32, watch_020.png, 116
+define_size = 48, watch_021.png, 116
+define_size = 64, watch_022.png, 116
+define_size = 96, watch_023.png, 116
+define_size = 32, watch_024.png, 116
+define_size = 48, watch_025.png, 116
+define_size = 64, watch_026.png, 116
+define_size = 96, watch_027.png, 116
+define_size = 32, watch_028.png, 116
+define_size = 48, watch_029.png, 116
+define_size = 64, watch_030.png, 116
+define_size = 96, watch_031.png, 116
+

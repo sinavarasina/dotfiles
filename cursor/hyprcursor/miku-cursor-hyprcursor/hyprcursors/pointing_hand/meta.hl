@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.16
+hotspot_y = 0.03
+
+define_size = 32, pointing_hand_000.png, 116
+define_size = 48, pointing_hand_001.png, 116
+define_size = 64, pointing_hand_002.png, 116
+define_size = 96, pointing_hand_003.png, 116
+define_size = 32, pointing_hand_004.png, 166
+define_size = 48, pointing_hand_005.png, 166
+define_size = 64, pointing_hand_006.png, 166
+define_size = 96, pointing_hand_007.png, 166
+define_size = 32, pointing_hand_008.png, 166
+define_size = 48, pointing_hand_009.png, 166
+define_size = 64, pointing_hand_010.png, 166
+define_size = 96, pointing_hand_011.png, 166
+define_size = 32, pointing_hand_012.png, 166
+define_size = 48, pointing_hand_013.png, 166
+define_size = 64, pointing_hand_014.png, 166
+define_size = 96, pointing_hand_015.png, 166
+define_size = 32, pointing_hand_016.png, 166
+define_size = 48, pointing_hand_017.png, 166
+define_size = 64, pointing_hand_018.png, 166
+define_size = 96, pointing_hand_019.png, 166
+define_size = 32, pointing_hand_020.png, 166
+define_size = 48, pointing_hand_021.png, 166
+define_size = 64, pointing_hand_022.png, 166
+define_size = 96, pointing_hand_023.png, 166
+define_size = 32, pointing_hand_024.png, 116
+define_size = 48, pointing_hand_025.png, 116
+define_size = 64, pointing_hand_026.png, 116
+define_size = 96, pointing_hand_027.png, 116
+define_size = 32, pointing_hand_028.png, 166
+define_size = 48, pointing_hand_029.png, 166
+define_size = 64, pointing_hand_030.png, 166
+define_size = 96, pointing_hand_031.png, 166
+

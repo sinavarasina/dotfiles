@@ -1,0 +1,11 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.50
+
+define_size = 32, n-resize_000.png, 333
+define_size = 48, n-resize_001.png, 333
+define_size = 64, n-resize_002.png, 333
+define_size = 96, n-resize_003.png, 333
+
+define_override = double_arrow
+define_override = ns-resize

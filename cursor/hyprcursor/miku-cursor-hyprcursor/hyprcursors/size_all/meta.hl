@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.22
+hotspot_y = 0.06
+
+define_size = 32, size_all_000.png, 116
+define_size = 48, size_all_001.png, 116
+define_size = 64, size_all_002.png, 116
+define_size = 96, size_all_003.png, 116
+define_size = 32, size_all_004.png, 166
+define_size = 48, size_all_005.png, 166
+define_size = 64, size_all_006.png, 166
+define_size = 96, size_all_007.png, 166
+define_size = 32, size_all_008.png, 166
+define_size = 48, size_all_009.png, 166
+define_size = 64, size_all_010.png, 166
+define_size = 96, size_all_011.png, 166
+define_size = 32, size_all_012.png, 166
+define_size = 48, size_all_013.png, 166
+define_size = 64, size_all_014.png, 166
+define_size = 96, size_all_015.png, 166
+define_size = 32, size_all_016.png, 166
+define_size = 48, size_all_017.png, 166
+define_size = 64, size_all_018.png, 166
+define_size = 96, size_all_019.png, 166
+define_size = 32, size_all_020.png, 166
+define_size = 48, size_all_021.png, 166
+define_size = 64, size_all_022.png, 166
+define_size = 96, size_all_023.png, 166
+define_size = 32, size_all_024.png, 116
+define_size = 48, size_all_025.png, 116
+define_size = 64, size_all_026.png, 116
+define_size = 96, size_all_027.png, 116
+define_size = 32, size_all_028.png, 166
+define_size = 48, size_all_029.png, 166
+define_size = 64, size_all_030.png, 166
+define_size = 96, size_all_031.png, 166
+

@@ -1,0 +1,9 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.47
+
+define_size = 32, dnd-no-drop_000.png, 333
+define_size = 48, dnd-no-drop_001.png, 333
+define_size = 64, dnd-no-drop_002.png, 333
+define_size = 96, dnd-no-drop_003.png, 333
+

@@ -1,0 +1,11 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.50
+
+define_size = 32, left_side_000.png, 166
+define_size = 48, left_side_001.png, 166
+define_size = 64, left_side_002.png, 166
+define_size = 96, left_side_003.png, 166
+
+define_override = h_double_arrow
+define_override = left_tee

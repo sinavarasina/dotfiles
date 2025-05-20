@@ -1,0 +1,10 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.47
+
+define_size = 32, bd_double_arrow_000.png, 166
+define_size = 48, bd_double_arrow_001.png, 166
+define_size = 64, bd_double_arrow_002.png, 166
+define_size = 96, bd_double_arrow_003.png, 166
+
+define_override = c7088f0f3e6c8088236ef8e1e3e70000

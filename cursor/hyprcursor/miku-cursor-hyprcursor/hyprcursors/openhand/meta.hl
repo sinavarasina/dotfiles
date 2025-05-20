@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.22
+hotspot_y = 0.00
+
+define_size = 32, openhand_000.png, 116
+define_size = 48, openhand_001.png, 116
+define_size = 64, openhand_002.png, 116
+define_size = 96, openhand_003.png, 116
+define_size = 32, openhand_004.png, 166
+define_size = 48, openhand_005.png, 166
+define_size = 64, openhand_006.png, 166
+define_size = 96, openhand_007.png, 166
+define_size = 32, openhand_008.png, 166
+define_size = 48, openhand_009.png, 166
+define_size = 64, openhand_010.png, 166
+define_size = 96, openhand_011.png, 166
+define_size = 32, openhand_012.png, 166
+define_size = 48, openhand_013.png, 166
+define_size = 64, openhand_014.png, 166
+define_size = 96, openhand_015.png, 166
+define_size = 32, openhand_016.png, 166
+define_size = 48, openhand_017.png, 166
+define_size = 64, openhand_018.png, 166
+define_size = 96, openhand_019.png, 166
+define_size = 32, openhand_020.png, 166
+define_size = 48, openhand_021.png, 166
+define_size = 64, openhand_022.png, 166
+define_size = 96, openhand_023.png, 166
+define_size = 32, openhand_024.png, 116
+define_size = 48, openhand_025.png, 116
+define_size = 64, openhand_026.png, 116
+define_size = 96, openhand_027.png, 116
+define_size = 32, openhand_028.png, 166
+define_size = 48, openhand_029.png, 166
+define_size = 64, openhand_030.png, 166
+define_size = 96, openhand_031.png, 166
+

@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.00
+hotspot_y = 0.00
+
+define_size = 32, default_000.png, 116
+define_size = 48, default_001.png, 116
+define_size = 64, default_002.png, 116
+define_size = 96, default_003.png, 116
+define_size = 32, default_004.png, 116
+define_size = 48, default_005.png, 116
+define_size = 64, default_006.png, 116
+define_size = 96, default_007.png, 116
+define_size = 32, default_008.png, 116
+define_size = 48, default_009.png, 116
+define_size = 64, default_010.png, 116
+define_size = 96, default_011.png, 116
+define_size = 32, default_012.png, 116
+define_size = 48, default_013.png, 116
+define_size = 64, default_014.png, 116
+define_size = 96, default_015.png, 116
+define_size = 32, default_016.png, 116
+define_size = 48, default_017.png, 116
+define_size = 64, default_018.png, 116
+define_size = 96, default_019.png, 116
+define_size = 32, default_020.png, 116
+define_size = 48, default_021.png, 116
+define_size = 64, default_022.png, 116
+define_size = 96, default_023.png, 116
+define_size = 32, default_024.png, 116
+define_size = 48, default_025.png, 116
+define_size = 64, default_026.png, 116
+define_size = 96, default_027.png, 116
+define_size = 32, default_028.png, 116
+define_size = 48, default_029.png, 116
+define_size = 64, default_030.png, 116
+define_size = 96, default_031.png, 116
+

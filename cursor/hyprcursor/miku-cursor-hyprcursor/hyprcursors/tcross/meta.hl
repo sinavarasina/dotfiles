@@ -1,0 +1,9 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.50
+
+define_size = 32, tcross_000.png, 333
+define_size = 48, tcross_001.png, 333
+define_size = 64, tcross_002.png, 333
+define_size = 96, tcross_003.png, 333
+

@@ -1,0 +1,13 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.50
+
+define_size = 32, e-resize_000.png, 166
+define_size = 48, e-resize_001.png, 166
+define_size = 64, e-resize_002.png, 166
+define_size = 96, e-resize_003.png, 166
+
+define_override = 028006030e0e7ebffc7f7070c0600140
+define_override = 14fef782d02440884392942c11205230
+define_override = col-resize
+define_override = ew-resize

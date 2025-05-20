@@ -1,0 +1,37 @@
+resize_algorithm = none
+hotspot_x = 0.16
+hotspot_y = 0.03
+
+define_size = 32, hand2_000.png, 116
+define_size = 48, hand2_001.png, 116
+define_size = 64, hand2_002.png, 116
+define_size = 96, hand2_003.png, 116
+define_size = 32, hand2_004.png, 166
+define_size = 48, hand2_005.png, 166
+define_size = 64, hand2_006.png, 166
+define_size = 96, hand2_007.png, 166
+define_size = 32, hand2_008.png, 166
+define_size = 48, hand2_009.png, 166
+define_size = 64, hand2_010.png, 166
+define_size = 96, hand2_011.png, 166
+define_size = 32, hand2_012.png, 166
+define_size = 48, hand2_013.png, 166
+define_size = 64, hand2_014.png, 166
+define_size = 96, hand2_015.png, 166
+define_size = 32, hand2_016.png, 166
+define_size = 48, hand2_017.png, 166
+define_size = 64, hand2_018.png, 166
+define_size = 96, hand2_019.png, 166
+define_size = 32, hand2_020.png, 166
+define_size = 48, hand2_021.png, 166
+define_size = 64, hand2_022.png, 166
+define_size = 96, hand2_023.png, 166
+define_size = 32, hand2_024.png, 116
+define_size = 48, hand2_025.png, 116
+define_size = 64, hand2_026.png, 116
+define_size = 96, hand2_027.png, 116
+define_size = 32, hand2_028.png, 166
+define_size = 48, hand2_029.png, 166
+define_size = 64, hand2_030.png, 166
+define_size = 96, hand2_031.png, 166
+

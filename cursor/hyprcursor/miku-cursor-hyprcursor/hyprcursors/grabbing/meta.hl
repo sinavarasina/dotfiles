@@ -1,0 +1,9 @@
+resize_algorithm = none
+hotspot_x = 0.22
+hotspot_y = 0.09
+
+define_size = 32, grabbing_000.png, 166
+define_size = 48, grabbing_001.png, 166
+define_size = 64, grabbing_002.png, 166
+define_size = 96, grabbing_003.png, 166
+

@@ -1,0 +1,9 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.47
+
+define_size = 32, crossed_circle_000.png, 333
+define_size = 48, crossed_circle_001.png, 333
+define_size = 64, crossed_circle_002.png, 333
+define_size = 96, crossed_circle_003.png, 333
+

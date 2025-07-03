@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 sleep 1
 killall -e xdg-desktop-portal-hyprland
 killall xdg-desktop-portal
-/usr/lib/xdg-desktop-portal-hyprland &
+/usr/libexec/xdg-desktop-portal-hyprland &
 sleep 2
-/usr/lib/xdg-desktop-portal &
+/usr/libexec/xdg-desktop-portal &

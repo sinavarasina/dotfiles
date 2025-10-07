@@ -1,8 +1,34 @@
+@define-color rosewater rgb(245, 224, 220);
+@define-color flamingo rgb(242, 205, 205);
+@define-color pink rgb(245, 194, 231);
+@define-color mauve rgb(203, 166, 247);
+@define-color red rgb(243, 139, 168);
+@define-color maroon rgb(235, 160, 172);
+@define-color peach rgb(250, 179, 135);
+@define-color yellow rgb(249, 226, 175);
+@define-color green rgb(166, 227, 161);
+@define-color teal rgb(148, 226, 213);
+@define-color sky rgb(137, 220, 235);
+@define-color sapphire rgb(116, 199, 236);
+@define-color blue rgb(137, 180, 250);
+@define-color lavender rgb(180, 190, 254);
+@define-color text rgb(205, 214, 244);
+@define-color subtext1 rgb(186, 194, 222);
+@define-color subtext0 rgb(166, 173, 200);
+@define-color overlay2 rgb(147, 153, 178);
+@define-color overlay1 rgb(127, 132, 156);
+@define-color overlay0 rgb(108, 112, 134);
+@define-color surface2 rgb(88, 91, 112);
+@define-color surface1 rgb(69, 71, 90);
+@define-color surface0 rgb(49, 50, 68);
+@define-color base rgb(30, 30, 46);
+@define-color mantle rgb(24, 24, 37);
+@define-color crust rgb(17, 17, 27);
+
 * {
     border: none;
     border-radius: 0px;
     font-family: "MesloLGS Nerd Font", monospace;
-    font-size: 12px;
     min-height: 0px;
 }
 
@@ -11,7 +37,7 @@ window#waybar {
 }
 
 #custom-logo {
-    background-color: rgb(137, 180, 250);
+    background-color: @blue;
     padding: 0px 4px 0px 12px;
     background-image: url('/home/sina/.config/waybar/logo/gentoo.svg');
     background-size: contain;
@@ -20,61 +46,181 @@ window#waybar {
     min-width: 22px;
 }
 
-#custom-sep-right-play-blue {
-    background-color: rgb(243, 139, 168);
-    color: rgb(137, 180, 250);
-    font-size: 18px;
-}
-
 #workspaces {
-    background-color: rgb(137, 180, 250);
-    color: rgb(17, 17, 27);
+    background-color: @blue;
+    color: @crust;
     font-size: 12px;
 }
 
 #workspaces button.active {
-    background-color: rgb(243, 139, 168);
-    color: rgb(17, 17, 27);
+    background-color: @red;
+    color: @crust;
     font-size: 12px; 
-}
-
-#custom-sep-right-K-red {
-    background-color: transparent;
-    color: rgb(243, 139, 168);
-    font-size: 18px;
 }
 
 #custom-hyprland_window_scroll {
     background-color: transparent;
     font-family: "BlexMono Nerd Font", monospace;
     font-size: 12px;
-    color: rgb(205, 214, 244);
+    color: @text;
     padding: 0px 4px;
 }
 
-#custom-sep-left-play-blue {
+#tray {
+    background-color: @blue;
+    color: @crust;
+    border: none;
+    padding: 0px 8px;
+    margin: 0px;
+    box-shadow: inset -2px 0 0 0 @red;
+}
+
+#tray menu {
+    background-color: @base;
+    color: @text;
+    border: 1px solid @overlay0;
+    border-radius: 6px;
+    padding: 4px 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    opacity: 0.6;
+}
+
+#tray > .active {
     background-color: transparent;
-    color: rgb(137, 180, 250);
+    color: @text;
+    opacity: 1;
+}
+
+#tray > .needs-attention {
+    background-color: @red;
+    color: @crust;
+    border-radius: 4px;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from { background-color: @red; }
+    to { background-color: @mauve; }
+}
+
+#network {
+    background-color: @blue;
+    color: @crust;
+    padding: 0px 6px;
+    font-size: 8px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#wireplumber, #network {
+    background-color: @blue;
+    color: @crust;
+    padding: 0px 6px;
+    font-size: 8px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+#wireplumber:hover, #network:hover {
+    background-color: mix(@blue, @mauve, 0.4);
+}
+
+#wireplumber.muted {
+    background-color: @overlay1;
+    color: @base;
+    text-decoration: line-through;
+}
+
+#wireplumber#source {
+    background-color: @mauve;
+    color: @crust;
+    padding: 0px 6px;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+#wireplumber#source:hover {
+    background-color: mix(@mauve, @pink, 0.5);
+}
+
+#wireplumber.source-muted {
+    background-color: @overlay1;
+    color: @base;
+    text-decoration: line-through;
+}
+
+#network.disconnected {
+    background-color: @overlay1;
+    color: @base;
+    text-decoration: line-through;
+}
+
+#clock {
+    background-color: @blue;
+    color: @crust;
+    font-weight: bold;
+    padding: 0px 12px;
+    min-width: 24px;   
+}
+
+#custom-sep-right-triangle-blue {
+    background-color: @red;
+    color: @blue;
+    font-size: 18px;
+}
+
+#custom-sep-right-k-red {
+    background-color: transparent;
+    color: @red;
+    font-size: 18px;
+    box-shadow: inset 0 -1px 0 0 @red;
+}
+
+#custom-sep-right-k-blue {
+    background-color: transparent;
+    color: @blue;
+    font-size: 18px;
+    box-shadow: inset 0 -1px 0 0 @blue;
+}
+
+#custom-sep-right-shift-red {
+    background-color: transparent;
+    color: @red;
+    font-size: 18px;
+}
+
+#custom-sep-left-shiftplay-blue {
+    background-color: transparent;
+    color: @blue;
+    font-size: 18px;
+}
+
+#custom-sep-left-shift-blue {
+    background-color: transparent;
+    color: @blue;
     font-size: 18px;
 }
 
 #custom-sep-right-slash-blue {
     background-color: transparent;
-    color: rgb(137, 180, 250);
+    color: @blue;
     font-size: 18px;
 }
 
 #custom-sep-left-slash-blue {
     background-color: transparent;
-    color: rgb(137, 180, 250);
+    color: @blue;
     font-size: 18px;
 }
 
-#clock {
-    background-color: rgb(137, 180, 250);
-    color: rgb(17, 17, 27);
-    font-weight: bold;
-    padding: 0px 12px;
-    min-width: 24px;   
+#custom-sep-space-red {
+    background-color: @red;
+    font-size: 18px;
 }
 

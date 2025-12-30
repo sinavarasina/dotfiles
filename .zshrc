@@ -18,6 +18,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory sharehistory incappendhistory
 setopt histignorealldups histignorespace
+setopt noequals
+setopt noclobber
 
 #------------------------------------------------------------------------------
 # COLOR CONFIGURATION
@@ -53,6 +55,10 @@ zstyle ':completion:*:descriptions' format '%F{blue}%B%d%b%f'
 # Case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+# Enable Caching
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
+
 #------------------------------------------------------------------------------
 # KEY BINDINGS
 #------------------------------------------------------------------------------
@@ -62,10 +68,11 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Arrow keys and Ctrl+P/N for history
-bindkey '^[[A' up-line-or-beginning-search    # Up arrow
-bindkey '^[[B' down-line-or-beginning-search  # Down arrow
-bindkey '^P' up-line-or-beginning-search      # Ctrl+P
-bindkey '^N' down-line-or-beginning-search    # Ctrl+N
+# Rebind history search keys after zsh-vi-mode takes over
+bindkey -M viins '^[[A' up-line-or-beginning-search    
+bindkey -M viins '^[[B' down-line-or-beginning-search  
+bindkey -M viins '^P' up-line-or-beginning-search
+bindkey -M viins '^N' down-line-or-beginning-search
 
 # Word navigation
 bindkey '^[b' backward-word  # Alt+Left
@@ -92,11 +99,11 @@ autoload -Uz _zinit
 
 # Load essential plugins immediately
 zinit light-mode for \
-    zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions \
     hlissner/zsh-autopair \
-    zsh-users/zsh-syntax-highlighting \
-    jeffreytse/zsh-vi-mode
+    jeffreytse/zsh-vi-mode \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-syntax-highlighting
 
 
 # Load plugins with turbo mode (deferred loading)
@@ -110,11 +117,11 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 # APPEARANCE & PROMPT
 #------------------------------------------------------------------------------
 # System information display
-fastfetch # -c ~/.config/fastfetch/my_dr460nized.jsonc
+# fastfetch -c ~/.config/fastfetch/my_dr460nized.jsonc
 #uwufetch
 
 # Initialize Oh-My-Posh prompt
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell.sinamod.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell_sinacatpuccin.omp.json)"
 
 #------------------------------------------------------------------------------
 # ALIASES
@@ -124,11 +131,15 @@ alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 alias l='ls -CF --color=auto'
 
+# for safety
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
 #------------------------------------------------------------------------------
 # OPTIMIZATION
 #------------------------------------------------------------------------------
 # Auto-compile .zshrc for faster loading
 if [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
     zcompile ~/.zshrc
-    print -P "%F{green}Compiled .zshrc for faster loading%f"
 fi

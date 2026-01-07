@@ -127,6 +127,9 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell_sinacatpuccin.
 # ALIASES
 #------------------------------------------------------------------------------
 alias sudo="doas"
+alias sudoedit="doas nvim"
+alias doasedit="doas nvim"
+
 alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 alias l='ls -CF --color=auto'

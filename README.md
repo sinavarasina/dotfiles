@@ -2,4 +2,4 @@
 
 dotfiles from my gentoo linux (and maybe my arch linux tablet too)
 
-![Screenshot](https://raw.githubusercontent.com/sinavarasina/dotfiles/main/screenshots/Screenshot_2025-10-08_01-34-42.png)
+![Screenshot](screenshots/Screenshot_2026-02-19_00-38-33.png)

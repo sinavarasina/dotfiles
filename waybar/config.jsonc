@@ -19,6 +19,7 @@
     ],
     "modules-center": [],
     "modules-right": [
+        "custom/sep-left-slash-blue",
         "tray",
         "wireplumber",
         "network",

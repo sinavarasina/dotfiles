@@ -12,6 +12,9 @@ export PATH="$PATH:$HOME/.cargo/bin/:$HOME/Applications:$HOME/.local/bin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# GPG check
+export GPG_TTY=$(tty)
+
 # History configuration
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

@@ -1,18 +1,21 @@
 {
     "layer": "bottom",
-    "position": "bottom",
+    "position": "top",
     "height": 24,
     "spacing": 0,
     "modules-left": [
         "custom/logo",
         "custom/sep-right-triangle-blue",
         "hyprland/workspaces#active",
-        "custom/sep-right-k-red",
-        "custom/sep-right-shift-red",
-        "custom/hyprland_window_scroll",
-        "custom/sep-left-shiftplay-blue",
+        "custom/sep-right-triangle-red",
+        "custom/sep-left-k-blue",
         "hyprland/workspaces#inactive",
-        "custom/sep-right-slash-blue"
+        "custom/sep-right-slash-blue",
+        "custom/sep-right-single-slash-blue",
+        "custom/sep-right-inv-slash-red",
+        "custom/hyprland_window_scroll",
+        "custom/sep-right-slash-red",
+        "custom/sep-right-single-slash-blue"
     ],
     "modules-center": [],
     "modules-right": [
@@ -35,6 +38,10 @@
         "format": "",
         "tooltip": false
     },
+    "custom/sep-right-triangle-red": {
+        "format": "",
+        "tooltip": false
+    },
 
     "hyprland/workspaces#active": {
         "format": "[{id}]:",
@@ -48,6 +55,10 @@
 
     "custom/sep-right-k-blue": {
         "format": "",
+        "tooltip": false
+    },
+    "custom/sep-left-k-blue": {
+        "format": "",
         "tooltip": false
     },
 
@@ -82,8 +93,28 @@
         "tooltip": false
     },
 
+    "custom/sep-right-slash-blue-redbg": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/sep-right-slash-red": {
+        "format": "",
+        "tooltip": false
+    },
+
     "custom/sep-left-slash-blue": {
         "format": "",
+        "tooltip": false
+    },
+
+    "custom/sep-right-inv-slash-red": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/sep-right-single-slash-blue": {
+        "format": "",
         "tooltip": false
     },
 

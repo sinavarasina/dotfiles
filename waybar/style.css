@@ -1,3 +1,4 @@
+/* catppuccin mocha */
 @define-color rosewater rgb(245, 224, 220);
 @define-color flamingo rgb(242, 205, 205);
 @define-color pink rgb(245, 194, 231);
@@ -24,6 +25,20 @@
 @define-color base rgb(30, 30, 46);
 @define-color mantle rgb(24, 24, 37);
 @define-color crust rgb(17, 17, 27);
+/* GENTOO */
+@define-color gentoo-purple rgb(84, 72, 122);
+@define-color gentoo-purple-light rgb(97, 83, 141);
+@define-color gentoo-purple-light2 rgb(110, 86, 175);
+@define-color gentoo-grey rgb(221, 218, 236);
+@define-color gentoo-grey-2 rgb(221, 223, 255);
+@define-color gentoo-green rgb(115, 210, 22);
+@define-color gentoo-red rgb(217, 83, 79);
+@define-color gentoo-body-bg rgb(250, 250, 250);
+@define-color gentoo-footer-bg rgb(225, 225, 225);
+@define-color gentoo-tip-bg rgb(223, 240, 216);
+@define-color gentoo-important-bg rgb(252, 248, 227);
+@define-color gentoo-warning-bg rgb(242, 222, 222);
+@define-color gentoo-note-bg rgb(217, 237, 247);
 
 * {
     border: none;
@@ -55,15 +70,16 @@ window#waybar {
 #workspaces button.active {
     background-color: @red;
     color: @crust;
-    font-size: 12px; 
+    font-size: 12px;
 }
 
 #custom-hyprland_window_scroll {
-    background-color: transparent;
+    background-color: @red;
     font-family: "BlexMono Nerd Font", monospace;
     font-size: 12px;
-    color: @text;
+    color: @crust;
     padding: 0px 4px;
+    /*    animation: text-blink 1s infinite alternate; */
 }
 
 #tray {
@@ -83,18 +99,18 @@ window#waybar {
     padding: 4px 6px;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
     opacity: 0.6;
 }
 
-#tray > .active {
+#tray>.active {
     background-color: transparent;
     color: @text;
     opacity: 1;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     background-color: @red;
     color: @crust;
     border-radius: 4px;
@@ -102,8 +118,32 @@ window#waybar {
 }
 
 @keyframes blink {
-    from { background-color: @red; }
-    to { background-color: @mauve; }
+    from {
+        background-color: @red;
+    }
+
+    to {
+        background-color: @mauve;
+    }
+}
+
+@keyframes text-blink {
+    from {
+        color: @crust;
+    }
+
+    to {
+        color: @text;
+        text-shadow:
+            -0.25px -0.25px 0 @crust,
+            0.25px -0.25px 0 @crust,
+            -0.25px 0.25px 0 @crust,
+            0.25px 0.25px 0 @crust,
+            -0.375px 0px 0 @crust,
+            0.375px 0px 0 @crust,
+            0px -0.375px 0 @crust,
+            0px 0.375px 0 @crust;
+    }
 }
 
 #network {
@@ -116,7 +156,8 @@ window#waybar {
     transition: background-color 0.2s ease-in-out;
 }
 
-#wireplumber, #network {
+#wireplumber,
+#network {
     background-color: @blue;
     color: @crust;
     padding: 0px 6px;
@@ -127,7 +168,8 @@ window#waybar {
 }
 
 
-#wireplumber:hover, #network:hover {
+#wireplumber:hover,
+#network:hover {
     background-color: mix(@blue, @mauve, 0.4);
 }
 
@@ -166,12 +208,17 @@ window#waybar {
     color: @crust;
     font-weight: bold;
     padding: 0px 12px;
-    min-width: 24px;   
+    min-width: 24px;
 }
 
 #custom-sep-right-triangle-blue {
     background-color: @red;
     color: @blue;
+    font-size: 18px;
+}
+
+#custom-sep-right-triangle-red {
+    color: @red;
     font-size: 18px;
 }
 
@@ -183,6 +230,13 @@ window#waybar {
 }
 
 #custom-sep-right-k-blue {
+    background-color: transparent;
+    color: @blue;
+    font-size: 18px;
+    box-shadow: inset 0 -1px 0 0 @blue;
+}
+
+#custom-sep-left-k-blue {
     background-color: transparent;
     color: @blue;
     font-size: 18px;
@@ -207,8 +261,20 @@ window#waybar {
     font-size: 18px;
 }
 
+#custom-sep-right-slash-red {
+    background-color: transparent;
+    color: @red;
+    font-size: 18px;
+}
+
 #custom-sep-right-slash-blue {
     background-color: transparent;
+    color: @blue;
+    font-size: 18px;
+}
+
+#custom-sep-right-slash-blue-redbg {
+    background-color: @red;
     color: @blue;
     font-size: 18px;
 }
@@ -219,8 +285,20 @@ window#waybar {
     font-size: 18px;
 }
 
+#custom-sep-right-inv-slash-red {
+    background-color: transparent;
+    color: @red;
+    font-size: 18px;
+    margin-bottom: -3px;
+}
+
+#custom-sep-right-single-slash-blue {
+    background-color: transparent;
+    color: @blue;
+    font-size: 18px;
+}
+
 #custom-sep-space-red {
     background-color: @red;
     font-size: 18px;
 }
-

@@ -5,27 +5,27 @@
     "spacing": 0,
     "modules-left": [
         "custom/logo",
-        "custom/sep-arrow-blue-red",
+        "custom/sep-arrow-r-fg_crust-bg_mantle",
         "hyprland/workspaces#active",
-        "custom/sep-arrow-red",
-        "custom/sep-curve-left-blue",
+        "custom/sep-arrow-r-fg_mantle-bg_trans",
+        "custom/sep-curve-l-fg_mantle-bg_trans",
         "hyprland/workspaces#inactive",
-        "custom/sep-slash-right-blue",
-        "custom/sep-slash-right-thin-blue",
-        "custom/sep-slash-left-inv-red",
+        "custom/sep-slash-r-fg_mantle-bg_trans",
+        "custom/sep-slash-r-thin-fg_surface0-bg_trans",
+        "custom/sep-slash-l-inv-fg_crust-bg_trans",
         "custom/hyprland_window_scroll",
-        "custom/sep-slash-right-red",
-        "custom/sep-slash-right-thin-blue"
+        "custom/sep-slash-r-fg_crust-bg_trans",
+        "custom/sep-slash-r-thin-fg_surface0-bg_trans"
     ],
     "modules-center": [],
     "modules-right": [
-        "custom/sep-slash-left-blue",
+        "custom/sep-slash-l-fg_mantle-bg_trans",
         "tray",
         "wireplumber",
         "network",
-        "custom/sep-curve-right-blue",
-        "custom/sep-arrow-left-thin-red",
-        "custom/sep-arrow-left-blue",
+        "custom/sep-curve-r-fg_mantle-bg_trans",
+        "custom/sep-arrow-l-thin-fg_surface0-bg_trans",
+        "custom/sep-arrow-l-fg_crust-bg_trans",
         "clock"
     ],
 
@@ -33,7 +33,7 @@
     "custom/logo": {
         "format": " ",
         "tooltip": false,
-        "on-click": "rofi -show drun"
+        "on-click": "wofi --show drun --allow-images"
     },
     "hyprland/workspaces#active": {
         "format": "[{id}]:",
@@ -75,15 +75,15 @@
     },
 
     // --- SEPARATOR MODULES ---
-    "custom/sep-arrow-blue-red": { "format": "", "tooltip": false },
-    "custom/sep-arrow-red": { "format": "", "tooltip": false },
-    "custom/sep-curve-left-blue": { "format": "", "tooltip": false },
-    "custom/sep-slash-right-blue": { "format": "", "tooltip": false },
-    "custom/sep-slash-right-thin-blue": { "format": "", "tooltip": false },
-    "custom/sep-slash-left-inv-red": { "format": "", "tooltip": false },
-    "custom/sep-slash-right-red": { "format": "", "tooltip": false },
-    "custom/sep-slash-left-blue": { "format": "", "tooltip": false },
-    "custom/sep-curve-right-blue": { "format": "", "tooltip": false },
-    "custom/sep-arrow-left-thin-red": { "format": "", "tooltip": false },
-    "custom/sep-arrow-left-blue": { "format": "", "tooltip": false }
+    "custom/sep-arrow-r-fg_crust-bg_mantle":       { "format": "", "tooltip": false },
+    "custom/sep-arrow-r-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
+    "custom/sep-curve-l-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
+    "custom/sep-slash-r-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
+    "custom/sep-slash-r-thin-fg_surface0-bg_trans":{ "format": "", "tooltip": false },
+    "custom/sep-slash-l-inv-fg_crust-bg_trans":    { "format": "", "tooltip": false },
+    "custom/sep-slash-r-fg_crust-bg_trans":        { "format": "", "tooltip": false },
+    "custom/sep-slash-l-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
+    "custom/sep-curve-r-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
+    "custom/sep-arrow-l-thin-fg_surface0-bg_trans":{ "format": "", "tooltip": false },
+    "custom/sep-arrow-l-fg_crust-bg_trans":        { "format": "", "tooltip": false }
 }

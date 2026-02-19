@@ -57,7 +57,7 @@ window#waybar {
  * MODULE STYLES
  * ============================== */
 #custom-logo {
-    background-color: @blue;
+    background-color: @crust;
     padding: 0px 4px 0px 12px;
     background-image: url('/home/sina/.config/waybar/logo/gentoo.svg');
     background-size: contain;
@@ -67,34 +67,41 @@ window#waybar {
 }
 
 #workspaces {
-    background-color: @blue;
-    color: @crust;
+    background-color: @mantle;
+    color: @subtext0;
     font-size: 12px;
 }
 
 #workspaces button.active {
-    background-color: @red;
-    color: @crust;
+    background-color: @mantle;
+    color: @mauve;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#workspaces button.inactive {
+    background-color: @mantle;
+    color: @overlay0;
     font-size: 12px;
 }
 
 #custom-hyprland_window_scroll {
-    background-color: @red;
+    background-color: @crust;
     font-family: "BlexMono Nerd Font", monospace;
     font-size: 12px;
-    color: @crust;
-    padding: 0px 4px;
+    color: @subtext1;
+    padding: 0px 8px;
 }
 
 #tray {
-    background-color: @blue;
-    color: @crust;
+    background-color: @mantle;
+    color: @text;
     padding: 0px 8px;
-    box-shadow: inset -2px 0 0 0 @red;
+    box-shadow: inset -2px 0 0 0 @surface0;
 }
 
 #tray menu {
-    background-color: @base;
+    background-color: @crust;
     color: @text;
     border: 1px solid @overlay0;
     border-radius: 6px;
@@ -113,7 +120,7 @@ window#waybar {
 }
 
 #tray>.needs-attention {
-    background-color: @red;
+    background-color: @mauve;
     color: @crust;
     border-radius: 4px;
     animation: blink 1s infinite alternate;
@@ -121,8 +128,8 @@ window#waybar {
 
 #wireplumber,
 #network {
-    background-color: @blue;
-    color: @crust;
+    background-color: @mantle;
+    color: @text;
     padding: 0px 6px;
     font-size: 8px;
     font-weight: 600;
@@ -131,24 +138,19 @@ window#waybar {
 
 #wireplumber:hover,
 #network:hover {
-    background-color: mix(@blue, @mauve, 0.4);
+    background-color: @surface0;
 }
 
-#wireplumber.muted {
-    background-color: @overlay1;
-    color: @base;
-    text-decoration: line-through;
-}
-
+#wireplumber.muted,
 #network.disconnected {
-    background-color: @overlay1;
-    color: @base;
+    background-color: @surface0;
+    color: @subtext0;
     text-decoration: line-through;
 }
 
 #clock {
-    background-color: @blue;
-    color: @crust;
+    background-color: @crust;
+    color: @text;
     font-weight: bold;
     padding: 0px 12px;
     min-width: 24px;
@@ -159,52 +161,66 @@ window#waybar {
  * ============================== */
 
 /* Base Style */
-#custom-sep-arrow-blue-red,
-#custom-sep-arrow-red,
-#custom-sep-curve-left-blue,
-#custom-sep-slash-right-blue,
-#custom-sep-slash-right-thin-blue,
-#custom-sep-slash-left-inv-red,
-#custom-sep-slash-right-red,
-#custom-sep-slash-left-blue,
-#custom-sep-curve-right-blue,
-#custom-sep-arrow-left-thin-red,
-#custom-sep-arrow-left-blue {
-    background-color: transparent;
+#custom-sep-arrow-r-fg_crust-bg_mantle,
+#custom-sep-arrow-r-fg_mantle-bg_trans,
+#custom-sep-curve-l-fg_mantle-bg_trans,
+#custom-sep-slash-r-fg_mantle-bg_trans,
+#custom-sep-slash-r-thin-fg_surface0-bg_trans,
+#custom-sep-slash-l-inv-fg_crust-bg_trans,
+#custom-sep-slash-r-fg_crust-bg_trans,
+#custom-sep-slash-l-fg_mantle-bg_trans,
+#custom-sep-curve-r-fg_mantle-bg_trans,
+#custom-sep-arrow-l-thin-fg_surface0-bg_trans,
+#custom-sep-arrow-l-fg_crust-bg_trans {
     font-size: 18px;
 }
 
-/* Foreground Blue */
-#custom-sep-arrow-blue-red,
-#custom-sep-curve-left-blue,
-#custom-sep-slash-right-blue,
-#custom-sep-slash-right-thin-blue,
-#custom-sep-slash-left-blue,
-#custom-sep-curve-right-blue,
-#custom-sep-arrow-left-blue {
-    color: @blue;
+/* Foreground Mapping */
+#custom-sep-arrow-r-fg_crust-bg_mantle,
+#custom-sep-slash-l-inv-fg_crust-bg_trans,
+#custom-sep-slash-r-fg_crust-bg_trans,
+#custom-sep-arrow-l-fg_crust-bg_trans {
+    color: @crust;
 }
 
-/* Foreground Red */
-#custom-sep-arrow-red,
-#custom-sep-slash-left-inv-red,
-#custom-sep-slash-right-red,
-#custom-sep-arrow-left-thin-red {
-    color: @red;
+#custom-sep-arrow-r-fg_mantle-bg_trans,
+#custom-sep-curve-l-fg_mantle-bg_trans,
+#custom-sep-slash-r-fg_mantle-bg_trans,
+#custom-sep-slash-l-fg_mantle-bg_trans,
+#custom-sep-curve-r-fg_mantle-bg_trans {
+    color: @mantle;
 }
 
-/* Background Red (Spesifik) */
-#custom-sep-arrow-blue-red {
-    background-color: @red;
+#custom-sep-slash-r-thin-fg_surface0-bg_trans,
+#custom-sep-arrow-l-thin-fg_surface0-bg_trans {
+    color: @surface0;
 }
 
-/* Struktur Spesifik / Quirks */
-#custom-sep-curve-left-blue,
-#custom-sep-curve-right-blue {
-    box-shadow: inset 0 -1px 0 0 @blue;
+/* Background Mapping */
+#custom-sep-arrow-r-fg_crust-bg_mantle {
+    background-color: @mantle;
 }
 
-#custom-sep-slash-left-inv-red {
+#custom-sep-arrow-r-fg_mantle-bg_trans,
+#custom-sep-curve-l-fg_mantle-bg_trans,
+#custom-sep-slash-r-fg_mantle-bg_trans,
+#custom-sep-slash-r-thin-fg_surface0-bg_trans,
+#custom-sep-slash-l-inv-fg_crust-bg_trans,
+#custom-sep-slash-r-fg_crust-bg_trans,
+#custom-sep-slash-l-fg_mantle-bg_trans,
+#custom-sep-curve-r-fg_mantle-bg_trans,
+#custom-sep-arrow-l-thin-fg_surface0-bg_trans,
+#custom-sep-arrow-l-fg_crust-bg_trans {
+    background-color: transparent;
+}
+
+/* Specific Structure & Quirks */
+#custom-sep-curve-l-fg_mantle-bg_trans,
+#custom-sep-curve-r-fg_mantle-bg_trans {
+    box-shadow: inset 0 -1px 0 0 @mantle;
+}
+
+#custom-sep-slash-l-inv-fg_crust-bg_trans {
     margin-bottom: -3px;
 }
 
@@ -213,7 +229,7 @@ window#waybar {
  * ============================== */
 @keyframes blink {
     from {
-        background-color: @red;
+        background-color: @surface0;
     }
 
     to {

@@ -59,7 +59,7 @@ window#waybar {
 #custom-logo {
     background-color: @crust;
     padding: 0px 4px 0px 12px;
-    background-image: url('/home/sina/.config/waybar/logo/gentoo.svg');
+    background-image: url('/home/sina/.config/waybar/logo/gentoo-mauve.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

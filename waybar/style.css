@@ -1,4 +1,8 @@
-/* catppuccin mocha */
+/* ==============================
+ * COLOR PALETTE 
+ * ============================== */
+
+/* Catppuccin Mocha */
 @define-color rosewater rgb(245, 224, 220);
 @define-color flamingo rgb(242, 205, 205);
 @define-color pink rgb(245, 194, 231);
@@ -25,6 +29,7 @@
 @define-color base rgb(30, 30, 46);
 @define-color mantle rgb(24, 24, 37);
 @define-color crust rgb(17, 17, 27);
+
 /* GENTOO */
 @define-color gentoo-purple rgb(84, 72, 122);
 @define-color gentoo-purple-light rgb(97, 83, 141);
@@ -33,13 +38,10 @@
 @define-color gentoo-grey-2 rgb(221, 223, 255);
 @define-color gentoo-green rgb(115, 210, 22);
 @define-color gentoo-red rgb(217, 83, 79);
-@define-color gentoo-body-bg rgb(250, 250, 250);
-@define-color gentoo-footer-bg rgb(225, 225, 225);
-@define-color gentoo-tip-bg rgb(223, 240, 216);
-@define-color gentoo-important-bg rgb(252, 248, 227);
-@define-color gentoo-warning-bg rgb(242, 222, 222);
-@define-color gentoo-note-bg rgb(217, 237, 247);
 
+/* ==============================
+ * GLOBAL & STRUCTURAL
+ * ============================== */
 * {
     border: none;
     border-radius: 0px;
@@ -51,6 +53,9 @@ window#waybar {
     background: transparent;
 }
 
+/* ==============================
+ * MODULE STYLES
+ * ============================== */
 #custom-logo {
     background-color: @blue;
     padding: 0px 4px 0px 12px;
@@ -79,15 +84,12 @@ window#waybar {
     font-size: 12px;
     color: @crust;
     padding: 0px 4px;
-    /*    animation: text-blink 1s infinite alternate; */
 }
 
 #tray {
     background-color: @blue;
     color: @crust;
-    border: none;
     padding: 0px 8px;
-    margin: 0px;
     box-shadow: inset -2px 0 0 0 @red;
 }
 
@@ -117,6 +119,98 @@ window#waybar {
     animation: blink 1s infinite alternate;
 }
 
+#wireplumber,
+#network {
+    background-color: @blue;
+    color: @crust;
+    padding: 0px 6px;
+    font-size: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#wireplumber:hover,
+#network:hover {
+    background-color: mix(@blue, @mauve, 0.4);
+}
+
+#wireplumber.muted {
+    background-color: @overlay1;
+    color: @base;
+    text-decoration: line-through;
+}
+
+#network.disconnected {
+    background-color: @overlay1;
+    color: @base;
+    text-decoration: line-through;
+}
+
+#clock {
+    background-color: @blue;
+    color: @crust;
+    font-weight: bold;
+    padding: 0px 12px;
+    min-width: 24px;
+}
+
+/* ==============================
+ * SEPARATOR STYLES
+ * ============================== */
+
+/* Base Style */
+#custom-sep-arrow-blue-red,
+#custom-sep-arrow-red,
+#custom-sep-curve-left-blue,
+#custom-sep-slash-right-blue,
+#custom-sep-slash-right-thin-blue,
+#custom-sep-slash-left-inv-red,
+#custom-sep-slash-right-red,
+#custom-sep-slash-left-blue,
+#custom-sep-curve-right-blue,
+#custom-sep-arrow-left-thin-red,
+#custom-sep-arrow-left-blue {
+    background-color: transparent;
+    font-size: 18px;
+}
+
+/* Foreground Blue */
+#custom-sep-arrow-blue-red,
+#custom-sep-curve-left-blue,
+#custom-sep-slash-right-blue,
+#custom-sep-slash-right-thin-blue,
+#custom-sep-slash-left-blue,
+#custom-sep-curve-right-blue,
+#custom-sep-arrow-left-blue {
+    color: @blue;
+}
+
+/* Foreground Red */
+#custom-sep-arrow-red,
+#custom-sep-slash-left-inv-red,
+#custom-sep-slash-right-red,
+#custom-sep-arrow-left-thin-red {
+    color: @red;
+}
+
+/* Background Red (Spesifik) */
+#custom-sep-arrow-blue-red {
+    background-color: @red;
+}
+
+/* Struktur Spesifik / Quirks */
+#custom-sep-curve-left-blue,
+#custom-sep-curve-right-blue {
+    box-shadow: inset 0 -1px 0 0 @blue;
+}
+
+#custom-sep-slash-left-inv-red {
+    margin-bottom: -3px;
+}
+
+/* ==============================
+ * KEYFRAMES
+ * ============================== */
 @keyframes blink {
     from {
         background-color: @red;
@@ -144,161 +238,4 @@ window#waybar {
             0px -0.375px 0 @crust,
             0px 0.375px 0 @crust;
     }
-}
-
-#network {
-    background-color: @blue;
-    color: @crust;
-    padding: 0px 6px;
-    font-size: 8px;
-    font-weight: 600;
-    border: none;
-    transition: background-color 0.2s ease-in-out;
-}
-
-#wireplumber,
-#network {
-    background-color: @blue;
-    color: @crust;
-    padding: 0px 6px;
-    font-size: 8px;
-    font-weight: 600;
-    border: none;
-    transition: background-color 0.2s ease-in-out;
-}
-
-
-#wireplumber:hover,
-#network:hover {
-    background-color: mix(@blue, @mauve, 0.4);
-}
-
-#wireplumber.muted {
-    background-color: @overlay1;
-    color: @base;
-    text-decoration: line-through;
-}
-
-#wireplumber#source {
-    background-color: @mauve;
-    color: @crust;
-    padding: 0px 6px;
-    font-size: 8px;
-    font-weight: 600;
-}
-
-#wireplumber#source:hover {
-    background-color: mix(@mauve, @pink, 0.5);
-}
-
-#wireplumber.source-muted {
-    background-color: @overlay1;
-    color: @base;
-    text-decoration: line-through;
-}
-
-#network.disconnected {
-    background-color: @overlay1;
-    color: @base;
-    text-decoration: line-through;
-}
-
-#clock {
-    background-color: @blue;
-    color: @crust;
-    font-weight: bold;
-    padding: 0px 12px;
-    min-width: 24px;
-}
-
-#custom-sep-right-triangle-blue {
-    background-color: @red;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-right-triangle-red {
-    color: @red;
-    font-size: 18px;
-}
-
-#custom-sep-right-k-red {
-    background-color: transparent;
-    color: @red;
-    font-size: 18px;
-    box-shadow: inset 0 -1px 0 0 @red;
-}
-
-#custom-sep-right-k-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-    box-shadow: inset 0 -1px 0 0 @blue;
-}
-
-#custom-sep-left-k-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-    box-shadow: inset 0 -1px 0 0 @blue;
-}
-
-#custom-sep-right-shift-red {
-    background-color: transparent;
-    color: @red;
-    font-size: 18px;
-}
-
-#custom-sep-left-shiftplay-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-left-shift-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-right-slash-red {
-    background-color: transparent;
-    color: @red;
-    font-size: 18px;
-}
-
-#custom-sep-right-slash-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-right-slash-blue-redbg {
-    background-color: @red;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-left-slash-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-right-inv-slash-red {
-    background-color: transparent;
-    color: @red;
-    font-size: 18px;
-    margin-bottom: -3px;
-}
-
-#custom-sep-right-single-slash-blue {
-    background-color: transparent;
-    color: @blue;
-    font-size: 18px;
-}
-
-#custom-sep-space-red {
-    background-color: @red;
-    font-size: 18px;
 }

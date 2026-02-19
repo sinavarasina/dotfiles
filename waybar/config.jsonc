@@ -5,139 +5,61 @@
     "spacing": 0,
     "modules-left": [
         "custom/logo",
-        "custom/sep-right-triangle-blue",
+        "custom/sep-arrow-blue-red",
         "hyprland/workspaces#active",
-        "custom/sep-right-triangle-red",
-        "custom/sep-left-k-blue",
+        "custom/sep-arrow-red",
+        "custom/sep-curve-left-blue",
         "hyprland/workspaces#inactive",
-        "custom/sep-right-slash-blue",
-        "custom/sep-right-single-slash-blue",
-        "custom/sep-right-inv-slash-red",
+        "custom/sep-slash-right-blue",
+        "custom/sep-slash-right-thin-blue",
+        "custom/sep-slash-left-inv-red",
         "custom/hyprland_window_scroll",
-        "custom/sep-right-slash-red",
-        "custom/sep-right-single-slash-blue"
+        "custom/sep-slash-right-red",
+        "custom/sep-slash-right-thin-blue"
     ],
     "modules-center": [],
     "modules-right": [
-        "custom/sep-left-slash-blue",
+        "custom/sep-slash-left-blue",
         "tray",
         "wireplumber",
         "network",
-        "custom/sep-right-k-blue",
-        "custom/sep-right-shift-red",
-        "custom/sep-left-shift-blue",
+        "custom/sep-curve-right-blue",
+        "custom/sep-arrow-left-thin-red",
+        "custom/sep-arrow-left-blue",
         "clock"
     ],
 
+    // --- CORE MODULES ---
     "custom/logo": {
         "format": " ",
         "tooltip": false,
         "on-click": "rofi -show drun"
     },
-
-    "custom/sep-right-triangle-blue": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/sep-right-triangle-red": {
-        "format": "",
-        "tooltip": false
-    },
-
     "hyprland/workspaces#active": {
         "format": "[{id}]:",
         "active-only": true
     },
-
-    "custom/sep-right-k-red": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-k-blue": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/sep-left-k-blue": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-shift-red": {
-        "format": "",
-        "tooltip": false
-    },
-
     "hyprland/workspaces#inactive": {
         "format": "{id}",
         "hide-active": true
     },
-
     "custom/hyprland_window_scroll": {
         "format": "{}",
         "exec": "~/.config/waybar/bin/hyprland_window_scroll",
         "escape": true
     },
-
-    "custom/sep-left-shiftplay-blue": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-left-shift-blue": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-slash-blue": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-slash-blue-redbg": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-slash-red": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-left-slash-blue": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-inv-slash-red": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-right-single-slash-blue": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/sep-space-red": {
-        "format": " ",
-        "tooltip": false
-    },
-
     "tray": {
         "icon-size": 16,
         "spacing": 8
     },
-
     "wireplumber": {
         "format": "{icon} {volume}%\n󰍬 {source_volume}%",
         "format-muted": "󰝟 0%\n󰍭 0%",
         "format-icons": ["", "", ""],
-        "on-click": "",
         "max-volume": 150,
         "scroll-step": 1
     },
-      "network": {
+    "network": {
         "interface": "enp9s0",
         "interval": 1,
         "format": " {bandwidthUpBytes}\n {bandwidthDownBytes}",
@@ -145,8 +67,23 @@
         "tooltip-format": "{ifname} ({ipaddr})\nGateway: {gwaddr}\nUp: {bandwidthUpBytes}/s\nDown: {bandwidthDownBytes}/s\nSignal: {signalStrength}% ({signaldBm} dBm)",
         "tooltip-format-wifi": "{ifname} via {essid}\nSignal: {signalStrength}% ({signaldBm} dBm)\nIP: {ipaddr}\nGateway: {gwaddr}\nUp: {bandwidthUpBytes}/s\nDown: {bandwidthDownBytes}/s\nFrequency: {frequency} GHz",
         "tooltip-format-ethernet": "{ifname} (Ethernet)\nIP: {ipaddr}\nGateway: {gwaddr}\nUp: {bandwidthUpBytes}/s\nDown: {bandwidthDownBytes}/s",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": ""
-    }
-}
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": true
+    },
 
+    // --- SEPARATOR MODULES ---
+    "custom/sep-arrow-blue-red": { "format": "", "tooltip": false },
+    "custom/sep-arrow-red": { "format": "", "tooltip": false },
+    "custom/sep-curve-left-blue": { "format": "", "tooltip": false },
+    "custom/sep-slash-right-blue": { "format": "", "tooltip": false },
+    "custom/sep-slash-right-thin-blue": { "format": "", "tooltip": false },
+    "custom/sep-slash-left-inv-red": { "format": "", "tooltip": false },
+    "custom/sep-slash-right-red": { "format": "", "tooltip": false },
+    "custom/sep-slash-left-blue": { "format": "", "tooltip": false },
+    "custom/sep-curve-right-blue": { "format": "", "tooltip": false },
+    "custom/sep-arrow-left-thin-red": { "format": "", "tooltip": false },
+    "custom/sep-arrow-left-blue": { "format": "", "tooltip": false }
+}

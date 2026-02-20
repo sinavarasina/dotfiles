@@ -5,17 +5,13 @@
 #------------------------------------------------------------------------------
 # ENVIRONMENT SETTINGS
 #------------------------------------------------------------------------------
-# Path configuration
 export PATH="$PATH:$HOME/.cargo/bin/:$HOME/Applications:$HOME/.local/bin"
 
-# Locale settings
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# GPG check
 export GPG_TTY=$(tty)
 
-# History configuration
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -27,11 +23,15 @@ setopt noclobber
 #------------------------------------------------------------------------------
 # COLOR CONFIGURATION
 #------------------------------------------------------------------------------
-# Enable colors
 autoload -Uz colors && colors
 
-# Color support for common commands
-eval $(dircolors -b)
+local _dircolors_cache=~/.cache/zsh/dircolors.zsh
+if [[ ! -f "$_dircolors_cache" || /etc/DIR_COLORS -nt "$_dircolors_cache" ]]; then
+    mkdir -p ~/.cache/zsh
+    dircolors -b > "$_dircolors_cache"
+fi
+source "$_dircolors_cache"
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -40,51 +40,25 @@ alias egrep='egrep --color=auto'
 #------------------------------------------------------------------------------
 # COMPLETION SYSTEM
 #------------------------------------------------------------------------------
-# Initialize completion system - only rebuild cache when needed
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
     compinit -i
 else
-    compinit -C -i  
+    compinit -C -i
 fi
 zmodload zsh/complist
 
-# Completion styling
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{blue}%B%d%b%f'
-
-# Case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# Enable Caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
 
 #------------------------------------------------------------------------------
-# KEY BINDINGS
-#------------------------------------------------------------------------------
-# History navigation
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-# Arrow keys and Ctrl+P/N for history
-# Rebind history search keys after zsh-vi-mode takes over
-bindkey -M viins '^[[A' up-line-or-beginning-search    
-bindkey -M viins '^[[B' down-line-or-beginning-search  
-bindkey -M viins '^P' up-line-or-beginning-search
-bindkey -M viins '^N' down-line-or-beginning-search
-
-# Word navigation
-bindkey '^[b' backward-word  # Alt+Left
-bindkey '^[f' forward-word   # Alt+Right
-
-#------------------------------------------------------------------------------
 # PLUGIN MANAGER (ZINIT)
 #------------------------------------------------------------------------------
-# Install Zinit if not present
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
 if [[ ! -f ${ZINIT_HOME}/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing Zinit…%f"
@@ -95,12 +69,15 @@ if [[ ! -f ${ZINIT_HOME}/zinit.zsh ]]; then
     print -P "%F{160}Clone failed.%f"
 fi
 
-# Load Zinit
 source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Load essential plugins immediately
+#------------------------------------------------------------------------------
+# APPEARANCE, PROMPT, PLUGIN
+#------------------------------------------------------------------------------
+zinit snippet "$HOME/dotfiles/zshtheme/sinanonym-theme.zsh"
+
 zinit light-mode for \
     zsh-users/zsh-completions \
     hlissner/zsh-autopair \
@@ -108,23 +85,10 @@ zinit light-mode for \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-syntax-highlighting
 
-
-# Load plugins with turbo mode (deferred loading)
 zinit lucid wait for \
     MattiaGaspa/gentoolinux-ohmyzsh
 
-# Load Oh-My-Zsh Git plugin
 zinit snippet OMZ::plugins/git/git.plugin.zsh
-
-#------------------------------------------------------------------------------
-# APPEARANCE & PROMPT
-#------------------------------------------------------------------------------
-# System information display
-# fastfetch -c ~/.config/fastfetch/my_dr460nized.jsonc
-#uwufetch
-
-# Initialize Oh-My-Posh prompt
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell_sinacatpuccin.omp.json)"
 
 #------------------------------------------------------------------------------
 # ALIASES
@@ -137,7 +101,6 @@ alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 alias l='ls -CF --color=auto'
 
-# for safety
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -145,7 +108,11 @@ alias mv='mv -i'
 #------------------------------------------------------------------------------
 # OPTIMIZATION
 #------------------------------------------------------------------------------
-# Auto-compile .zshrc for faster loading
-if [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
-    zcompile ~/.zshrc
-fi
+{
+    local f
+    for f in ~/.zshrc ~/dotfiles/zshtheme/*.zsh; do
+        if [[ -f "$f" && ( ! -f "${f}.zwc" || "$f" -nt "${f}.zwc" ) ]]; then
+            zcompile "$f"
+        fi
+    done
+} &!

@@ -73,6 +73,4 @@ add-zsh-hook preexec _custom_prompt_preexec
 add-zsh-hook precmd _custom_prompt_precmd
 setopt PROMPT_SUBST
 
-function zvm_after_init() {
-    zle -N zle-line-finish _transient_prompt_on_finish
-}
+zle -N zle-line-finish _transient_prompt_on_finish

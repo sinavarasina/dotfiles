@@ -57,6 +57,32 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
 
 #------------------------------------------------------------------------------
+# KEYBINDING
+#------------------------------------------------------------------------------
+
+# enable vi keybinding
+bindkey -v
+
+# load history search module
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# insert mode
+bindkey -M viins '^[[A' up-line-or-beginning-search
+bindkey -M viins '^[[B' down-line-or-beginning-search
+bindkey -M viins '^P'   up-line-or-beginning-search
+bindkey -M viins '^N'   down-line-or-beginning-search
+bindkey -M viins '^[b'  backward-word
+bindkey -M viins '^[f'  forward-word
+
+# normal mode
+bindkey -M vicmd '^[[A' up-line-or-beginning-search
+bindkey -M vicmd '^[[B' down-line-or-beginning-search
+bindkey -M vicmd 'k'    up-line-or-beginning-search
+bindkey -M vicmd 'j'    down-line-or-beginning-search
+
+#------------------------------------------------------------------------------
 # PLUGIN MANAGER (ZINIT)
 #------------------------------------------------------------------------------
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
@@ -81,7 +107,6 @@ zinit snippet "$HOME/dotfiles/zshtheme/sinanonym-theme.zsh"
 zinit light-mode for \
     zsh-users/zsh-completions \
     hlissner/zsh-autopair \
-    jeffreytse/zsh-vi-mode \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-syntax-highlighting
 

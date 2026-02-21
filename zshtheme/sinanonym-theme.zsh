@@ -2,6 +2,7 @@ zmodload zsh/datetime
 autoload -Uz add-zsh-hook vcs_info
 
 setopt PROMPT_SUBST
+PROMPT_EOL_MARK=""
 
 # ===== VCS CONFIG =====
 zstyle ':vcs_info:*' enable git

@@ -1,0 +1,105 @@
+[global]
+    ### Display ###
+    monitor = 0
+    follow = none
+
+    ### Geometry ###
+    width = (0, 320)
+    height = (0, 48)
+    origin = bottom-right
+    offset = (8, 8)
+    scale = 0
+    notification_limit = 10
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 2
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 80
+    progress_bar_max_width = 320
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+    progress_bar_color = "#cba6f7"   
+
+    ### Style ###
+    transparency = 10
+    padding = 8
+    horizontal_padding = 10
+    text_icon_padding = 8
+    frame_width = 1
+    frame_color = "#313244"     
+    separator_height = 1
+    gap_size = 2
+    corner_radius = 0
+    corners = all
+
+    ### Text ###
+    font = MesloLGS Nerd Font 9
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    ellipsize = middle
+    ignore_newline = no
+    word_wrap = yes
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_age_threshold = 60
+    indicate_hidden = yes
+    show_indicators = no
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = Arc,hicolor
+    icon_position = left
+    min_icon_size = 16
+    max_icon_size = 32
+    icon_corner_radius = 0
+    icon_corners = all
+
+    ### Behavior ###
+    sticky_history = yes
+    history_length = 10
+    sort = no
+    idle_threshold = 120
+    always_run_script = true
+    ignore_dbusclose = false
+
+    ### Mouse actions ###
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+    ### Commands ###
+    dmenu = wofi --show dmenu --prompt "Notification:" --hide-scroll --allow-markup
+    browser = xdg-open
+
+    ### Wayland ###
+    layer = overlay
+    force_xwayland = false
+
+[logging]
+    path = ~/.cache/dunst.log
+
+# ===========================
+# COLORS — CATPPUCCIN MOCHA (Stealth/Kuudere Edit)
+# ===========================
+
+[urgency_low]
+    background = "#11111b"
+    foreground = "#a6adc8"
+    frame_color = "#181825"
+    timeout = 4
+
+[urgency_normal]
+    background = "#11111b"
+    foreground = "#cdd6f4"
+    frame_color = "#313244"
+    timeout = 6
+
+[urgency_critical]
+    background = "#11111b"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
+    timeout = 10

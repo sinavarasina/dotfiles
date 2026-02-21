@@ -1,76 +1,97 @@
 zmodload zsh/datetime
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
+autoload -Uz add-zsh-hook vcs_info
 
-zstyle ':vcs_info:*' max-exports 1
+setopt PROMPT_SUBST
+
+# ===== VCS CONFIG =====
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats " %F{#f5c2e7} %b%f"
-zstyle ':vcs_info:git:*' actionformats " %F{#f5c2e7} %b|%a%f"
+zstyle ':vcs_info:*' max-exports 1
+zstyle ':vcs_info:git:*' formats ' %F{#6c7086}git:%F{#bac2de}%b%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{#6c7086}git:%F{#bac2de}%b|%a%f'
 
-__MAIN_PROMPT='
-%F{#f38ba8}%f %F{#f2cdcd}%n%f %F{#cdd6f4}on%f %F{#cba6f7}%D{%A} at %D{%I:%M %p}%f${vcs_info_msg_0_}
-%F{#74c7ec}%f %F{#f5c2e7}{  %~ }%f${__status_segment} %F{#cba6f7}%f '
-
-function _custom_prompt_preexec() {
-    __cmd_timer=${EPOCHREALTIME}
+# ===== TIMER =====
+_custom_prompt_preexec() {
+    __cmd_timer=$EPOCHREALTIME
 }
 
-function _custom_prompt_precmd() {
-    local exit_code=$?
+# ===== PROMPT LOGIC =====
+_custom_prompt_precmd() {
+    # Save return value
+    __last_exit_code=$?
+    vcs_info
 
-    if [[ -d .git ]] || git rev-parse --git-dir &>/dev/null; then
-        vcs_info
-    else
-        vcs_info_msg_0_=""
-    fi
-
+    # Execution Time
+    local rprompt=""
     if [[ -n $__cmd_timer ]]; then
         local elapsed=$(( EPOCHREALTIME - __cmd_timer ))
-        local exec_time=$(printf "%.2fs" $elapsed)
+        local exec_time=$(printf "%.2f" $elapsed)
+        rprompt="%F{#6c7086}${exec_time}s%f"
         unset __cmd_timer
-
-        local mem_total mem_avail
-        while IFS=" :" read -r key val _; do
-            case $key in
-                MemTotal) mem_total=$val ;;
-                MemAvailable) mem_avail=$val ;;
-            esac
-            [[ -n "$mem_total" && -n "$mem_avail" ]] && break
-        done < /proc/meminfo
-
-        if [[ -n "$mem_total" && -n "$mem_avail" && "$mem_total" -gt 0 ]]; then
-            local mem_used=$(( mem_total - mem_avail ))
-            local mem_percent=$(printf "%.2f" $(( 100.0 * mem_used / mem_total )))
-            local mem_used_gb=$(printf "%.0f" $(( mem_used / 1024.0 / 1024.0 )))
-            local mem_total_gb=$(printf "%.0f" $(( mem_total / 1024.0 / 1024.0 )))
-            __cached_rprompt="%F{#a6e3a1}${exec_time}%f %F{#cdd6f4}%f %F{#a6e3a1}MEM: ${mem_percent}%% (${mem_used_gb}/${mem_total_gb}GB)%f"
-        else
-            __cached_rprompt="%F{#a6e3a1}${exec_time}%f"
-        fi
     fi
+    RPROMPT="$rprompt"
 
-    RPROMPT="${__cached_rprompt}"
-
-    if [[ $exit_code -eq 0 ]]; then
-        __status_segment="%F{#f5c2e7}{%f%F{#a6e3a1} ${exit_code}%f%F{#f5c2e7}}%f"
+    # Exit Status
+    if (( __last_exit_code == 0 )); then
+        __transient_exit_status="%F{#6c7086}ret:${__last_exit_code}%f"
     else
-        __status_segment="%F{#f5c2e7}{%f%F{#f38ba8} ${exit_code}%f%F{#f5c2e7}}%f"
+        __transient_exit_status="%F{#f38ba8}RET:${__last_exit_code}%f"
     fi
 
-    PROMPT=$__MAIN_PROMPT
+    # Reset state to insert
+    __vi_prompt_symbol="❯"
+    if (( __last_exit_code == 0 )); then
+        __vi_prompt_color="%F{#cdd6f4}" 
+    else
+        __vi_prompt_color="%F{#f38ba8}" 
+    fi
+
+    # Prompt
+    PROMPT="
+%F{#6c7086}|%f %F{#cba6f7}%~%f %F{#6c7086}|%f %F{#6c7086}• %n • %D{%H:%M}%f${vcs_info_msg_0_}
+${__transient_exit_status} \${__vi_prompt_color}\${__vi_prompt_symbol}%f "
 }
 
-function _transient_prompt_on_finish() {
-    if [[ -z "$BUFFER" ]]; then
-        return
+# ===== VI-MODE INTEGRATION =====
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+        # Solid block
+        echo -ne '\e[2 q' 
+        __vi_prompt_symbol="❮"
+        if (( __last_exit_code == 0 )); then
+            __vi_prompt_color="%F{#a6adc8}"
+        fi
+    elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
+        # Solid block blinking
+        echo -ne '\e[1 q' 
+        __vi_prompt_symbol="❯"
+        if (( __last_exit_code == 0 )); then
+            __vi_prompt_color="%F{#cdd6f4}" 
+        fi
     fi
-    PROMPT="%F{#cdd6f4}%f "
+    zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-init {
+    echo -ne '\e[1 q' 
+    zle-keymap-select 'beam'
+}
+zle -N zle-line-init
+
+# ===== TRANSIENT PROMPT =====
+_transient_prompt_on_finish() {
+    [[ -z $BUFFER ]] && return
+    
+    local final_color="%F{#6c7086}"
+    if (( __last_exit_code != 0 )); then
+        final_color="%F{#f38ba8}"
+    fi
+
+    PROMPT="%F{#6c7086}❯%f "
     RPROMPT=""
     zle reset-prompt
 }
 
 add-zsh-hook preexec _custom_prompt_preexec
 add-zsh-hook precmd _custom_prompt_precmd
-setopt PROMPT_SUBST
-
 zle -N zle-line-finish _transient_prompt_on_finish

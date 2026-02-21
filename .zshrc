@@ -12,13 +12,17 @@ export LC_ALL=en_US.UTF-8
 
 export GPG_TTY=$(tty)
 
+export KEYTIMEOUT=1
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
 setopt appendhistory sharehistory incappendhistory
 setopt histignorealldups histignorespace
 setopt noequals
 setopt noclobber
+setopt noflowcontrol
 
 #------------------------------------------------------------------------------
 # COLOR CONFIGURATION
@@ -51,7 +55,7 @@ zmodload zsh/complist
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format '%F{blue}%B%d%b%f'
+zstyle ':completion:*:descriptions' format '%F{#cba6f7}%B%d%b%f'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
@@ -68,19 +72,40 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
 # insert mode
-bindkey -M viins '^[[A' up-line-or-beginning-search
-bindkey -M viins '^[[B' down-line-or-beginning-search
-bindkey -M viins '^P'   up-line-or-beginning-search
-bindkey -M viins '^N'   down-line-or-beginning-search
-bindkey -M viins '^[b'  backward-word
-bindkey -M viins '^[f'  forward-word
+bindkey -M viins     '^[[A'     up-line-or-beginning-search
+bindkey -M viins     '^[[B'     down-line-or-beginning-search
+bindkey -M viins     '^P'       up-line-or-beginning-search
+bindkey -M viins     '^N'       down-line-or-beginning-search
+bindkey -M viins     '^[b'      backward-word
+bindkey -M viins     '^[f'      forward-word
+bindkey -M viins     '^?'       backward-delete-char
+bindkey -M viins     '^H'       backward-delete-char
+bindkey -M viins     '^[[3~'    delete-char
+bindkey -M viins     '^[[H'     beginning-of-line
+bindkey -M viins     '^[[F'     end-of-line
+bindkey -M viins     '^[OH'     beginning-of-line
+bindkey -M viins     '^[OF'     end-of-line
 
 # normal mode
-bindkey -M vicmd '^[[A' up-line-or-beginning-search
-bindkey -M vicmd '^[[B' down-line-or-beginning-search
-bindkey -M vicmd 'k'    up-line-or-beginning-search
-bindkey -M vicmd 'j'    down-line-or-beginning-search
+bindkey -M vicmd     '^[[A'     up-line-or-beginning-search
+bindkey -M vicmd     '^[[B'     down-line-or-beginning-search
+bindkey -M vicmd     'k'        up-line-or-beginning-search
+bindkey -M vicmd     'j'        down-line-or-beginning-search
+bindkey -M vicmd     'u'        undo
+bindkey -M vicmd     '^R'       redo
+bindkey -M vicmd     'v'        edit-command-line
+bindkey -M vicmd     '/'        history-incremental-search-backward
+bindkey -M vicmd     '?'        history-incremental-search-forward
+
+# isearch mode 
+bindkey -M isearch   '^?'       backward-delete-char
+bindkey -M isearch   '^H'       backward-delete-char
+bindkey -M isearch   '^P'       history-incremental-search-backward
+bindkey -M isearch   '^N'       history-incremental-search-forward
 
 #------------------------------------------------------------------------------
 # PLUGIN MANAGER (ZINIT)
@@ -105,12 +130,12 @@ autoload -Uz _zinit
 zinit snippet "$HOME/dotfiles/zshtheme/sinanonym-theme.zsh"
 
 zinit light-mode for \
-    zsh-users/zsh-completions \
-    hlissner/zsh-autopair \
-    zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-completions
 
 zinit lucid wait for \
+    hlissner/zsh-autopair \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-syntax-highlighting \
     MattiaGaspa/gentoolinux-ohmyzsh
 
 zinit snippet OMZ::plugins/git/git.plugin.zsh
@@ -131,11 +156,16 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 #------------------------------------------------------------------------------
+# Post Load ENV
+#------------------------------------------------------------------------------
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c7086"
+
+#------------------------------------------------------------------------------
 # OPTIMIZATION
 #------------------------------------------------------------------------------
 {
     local f
-    for f in ~/.zshrc ~/dotfiles/zshtheme/*.zsh; do
+    for f in ~/.zshrc ~/dotfiles/zshtheme/*.zsh ${ZDOTDIR:-$HOME}/.zcompdump; do
         if [[ -f "$f" && ( ! -f "${f}.zwc" || "$f" -nt "${f}.zwc" ) ]]; then
             zcompile "$f"
         fi

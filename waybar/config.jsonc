@@ -57,7 +57,10 @@
         "format-muted": "󰝟 0%\n󰍭 0%",
         "format-icons": ["", "", ""],
         "max-volume": 150,
-        "scroll-step": 1
+        "scroll-step": 1,
+        "tooltip": true,
+        "tooltip-format": "Device: {node_name}",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "network": {
         "interface": "enp9s0",
@@ -71,7 +74,27 @@
     },
     "clock": {
         "format": "{:%H:%M}",
-        "tooltip": true
+        "format-alt": "  {:%A, %d %B %Y}",
+        "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt><small>{calendar}</small></tt>",
+        
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#cba6f7'><b>{}</b></span>",
+                "days":       "<span color='#cdd6f4'>{}</span>",
+                "weeks":      "<span color='#6c7086'>W{}</span>",
+                "weekdays":   "<span color='#89b4fa'><b>{}</b></span>",
+                "today":      "<span background='#f38ba8' color='#11111b'><b> {} </b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
 
     // --- SEPARATOR MODULES ---

@@ -34,7 +34,7 @@ _custom_prompt_precmd() {
     if (( __last_exit_code == 0 )); then
         __transient_exit_status="%F{#6c7086}ret:${__last_exit_code}%f"
     else
-        __transient_exit_status="%F{#f38ba8}RET:${__last_exit_code}%f"
+        __transient_exit_status="%F{#f38ba8}ret:${__last_exit_code}%f"
     fi
 
     # Reset state to insert

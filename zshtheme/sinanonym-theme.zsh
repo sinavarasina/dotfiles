@@ -88,7 +88,7 @@ _transient_prompt_on_finish() {
         final_color="%F{#f38ba8}"
     fi
 
-    PROMPT="%F{#6c7086}❯%f "
+    PROMPT="${final_color}❯%f "
     RPROMPT=""
     zle reset-prompt
 }

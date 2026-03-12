@@ -127,7 +127,11 @@ window#waybar {
 }
 
 #wireplumber,
-#network {
+#network,
+#cpu,
+#memory,
+#disk,
+#bluetooth {
     background-color: @mantle;
     color: @text;
     padding: 0px 6px;
@@ -137,7 +141,11 @@ window#waybar {
 }
 
 #wireplumber:hover,
-#network:hover {
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#bluetooth:hover {
     background-color: @surface0;
 }
 
@@ -156,6 +164,23 @@ window#waybar {
     min-width: 24px;
 }
 
+#custom-expand_sign {
+    background-color: @mantle;
+    color: @subtext0;
+    padding: 0px 6px;
+    font-size: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#expandable-mon:hover #custom-expand_sign,
+#expandable-mon:hover #custom-expand_sign label {
+    font-size: 0px;
+    padding: 0px;
+    margin: 0px;
+    min-width: 0px;
+    color: transparent;
+}
+
 /* ==============================
  * SEPARATOR STYLES
  * ============================== */
@@ -171,7 +196,10 @@ window#waybar {
 #custom-sep-slash-l-fg_mantle-bg_trans,
 #custom-sep-curve-r-fg_mantle-bg_trans,
 #custom-sep-arrow-l-thin-fg_surface0-bg_trans,
-#custom-sep-arrow-l-fg_crust-bg_trans {
+#custom-sep-slash-r-thin-inv-fg_surface0-bg_trans,
+#custom-sep-arrow-l-fg_crust-bg_trans,
+#custom-sep-slash-r-inv-fg_mantle-bg_trans,
+#custom-sep-slash-r-inv-fg_crust-bg_trans {
     font-size: 18px;
 }
 
@@ -179,7 +207,8 @@ window#waybar {
 #custom-sep-arrow-r-fg_crust-bg_mantle,
 #custom-sep-slash-l-inv-fg_crust-bg_trans,
 #custom-sep-slash-r-fg_crust-bg_trans,
-#custom-sep-arrow-l-fg_crust-bg_trans {
+#custom-sep-arrow-l-fg_crust-bg_trans,
+#custom-sep-slash-r-inv-fg_crust-bg_trans {
     color: @crust;
 }
 
@@ -187,11 +216,13 @@ window#waybar {
 #custom-sep-curve-l-fg_mantle-bg_trans,
 #custom-sep-slash-r-fg_mantle-bg_trans,
 #custom-sep-slash-l-fg_mantle-bg_trans,
-#custom-sep-curve-r-fg_mantle-bg_trans {
+#custom-sep-curve-r-fg_mantle-bg_trans,
+#custom-sep-slash-r-inv-fg_mantle-bg_trans {
     color: @mantle;
 }
 
 #custom-sep-slash-r-thin-fg_surface0-bg_trans,
+#custom-sep-slash-r-thin-inv-fg_surface0-bg_trans,
 #custom-sep-arrow-l-thin-fg_surface0-bg_trans {
     color: @surface0;
 }
@@ -205,12 +236,15 @@ window#waybar {
 #custom-sep-curve-l-fg_mantle-bg_trans,
 #custom-sep-slash-r-fg_mantle-bg_trans,
 #custom-sep-slash-r-thin-fg_surface0-bg_trans,
+#custom-sep-slash-r-thin-inv-fg_surface0-bg_trans,
 #custom-sep-slash-l-inv-fg_crust-bg_trans,
 #custom-sep-slash-r-fg_crust-bg_trans,
 #custom-sep-slash-l-fg_mantle-bg_trans,
 #custom-sep-curve-r-fg_mantle-bg_trans,
 #custom-sep-arrow-l-thin-fg_surface0-bg_trans,
-#custom-sep-arrow-l-fg_crust-bg_trans {
+#custom-sep-arrow-l-fg_crust-bg_trans,
+#custom-sep-slash-r-inv-fg_mantle-bg_trans,
+#custom-sep-slash-r-inv-fg_crust-bg_trans {
     background-color: transparent;
 }
 
@@ -220,7 +254,8 @@ window#waybar {
     box-shadow: inset 0 -1px 0 0 @mantle;
 }
 
-#custom-sep-slash-l-inv-fg_crust-bg_trans {
+#custom-sep-slash-l-inv-fg_crust-bg_trans,
+#custom-sep-slash-r-inv-fg_mantle-bg_trans {
     margin-bottom: -3px;
 }
 

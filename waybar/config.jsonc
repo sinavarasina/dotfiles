@@ -21,8 +21,11 @@
     "modules-right": [
         "custom/sep-slash-l-fg_mantle-bg_trans",
         "tray",
+        "cpu",
+        "memory",
         "wireplumber",
         "network",
+        "group/expandable-mon",
         "custom/sep-curve-r-fg_mantle-bg_trans",
         "custom/sep-arrow-l-thin-fg_surface0-bg_trans",
         "custom/sep-arrow-l-fg_crust-bg_trans",
@@ -96,17 +99,72 @@
             "on-scroll-down": "shift_down"
         }
     },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%\n󰓅 {avg_frequency}GHz",
+        "tooltip": true,
+        "tooltip-format": "Usage: {usage}%\nLoad: {load}\nAvg Freq: {avg_frequency}GHz\nMax Freq: {max_frequency}GHz\nMin Freq: {min_frequency}GHz",
+        "on-click": "footclient btop"
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {percentage}%\n󰾆 {used:0.1f}G",
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB ({percentage}%)\nSwap: {swapUsed:0.1f}GB / {swapTotal:0.1f}GB ({swapPercentage}%)",
+        "on-click": "footclient btop"
+    },
+    "disk": {
+        "interval": 30,
+        "format": " {specific_used:>5.1f}G Used\n {specific_free:>5.1f}G Free", 
+        "unit": "GB",
+        "tooltip": true,
+        "tooltip-format": "Path: {path}\nTotal: {total}\nUsed: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)",
+        "on-click": "footclient btop",
+        "path": "/"
+    },
+    "bluetooth": {
+        "format": " {status}\n󰥉 {device_battery_percentage}%",
+        "format-disabled": "󰂲 Disabled\n󰥉 N/A",
+        "format-connected": "󰂱 {status}\n󰥉 {device_battery_percentage}%",
+        "tooltip": true,
+        "tooltip-format": "Controller: {controller_alias}\nStatus: {status}",
+        "tooltip-format-connected": "Controller: {controller_alias}\nConnections: {num_connections}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "󰂱 {device_alias} ({device_battery_percentage}% Battery)",
+        "on-click": "footclient bluetui"
+    },
 
     // --- SEPARATOR MODULES ---
-    "custom/sep-arrow-r-fg_crust-bg_mantle":       { "format": "", "tooltip": false },
-    "custom/sep-arrow-r-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
-    "custom/sep-curve-l-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
-    "custom/sep-slash-r-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
-    "custom/sep-slash-r-thin-fg_surface0-bg_trans":{ "format": "", "tooltip": false },
-    "custom/sep-slash-l-inv-fg_crust-bg_trans":    { "format": "", "tooltip": false },
-    "custom/sep-slash-r-fg_crust-bg_trans":        { "format": "", "tooltip": false },
-    "custom/sep-slash-l-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
-    "custom/sep-curve-r-fg_mantle-bg_trans":       { "format": "", "tooltip": false },
-    "custom/sep-arrow-l-thin-fg_surface0-bg_trans":{ "format": "", "tooltip": false },
-    "custom/sep-arrow-l-fg_crust-bg_trans":        { "format": "", "tooltip": false }
+    "custom/sep-arrow-r-fg_crust-bg_mantle":            { "format": "", "tooltip": false },
+    "custom/sep-arrow-r-fg_mantle-bg_trans":            { "format": "", "tooltip": false },
+    "custom/sep-curve-l-fg_mantle-bg_trans":            { "format": "", "tooltip": false },
+    "custom/sep-slash-r-fg_mantle-bg_trans":            { "format": "", "tooltip": false },
+    "custom/sep-slash-r-thin-fg_surface0-bg_trans":     { "format": "", "tooltip": false },
+    "custom/sep-slash-r-thin-inv-fg_surface0-bg_trans": { "format": "", "tooltip": false },
+    "custom/sep-slash-l-inv-fg_crust-bg_trans":         { "format": "", "tooltip": false },
+    "custom/sep-slash-r-fg_crust-bg_trans":             { "format": "", "tooltip": false },
+    "custom/sep-slash-r-inv-fg_mantle-bg_trans":        { "format": "", "tooltip": false },
+    "custom/sep-slash-l-fg_mantle-bg_trans":            { "format": "", "tooltip": false },
+    "custom/sep-slash-r-inv-fg_crust-bg_trans":         { "format": "", "tooltip": false },
+    "custom/sep-curve-r-fg_mantle-bg_trans":            { "format": "", "tooltip": false },
+    "custom/sep-arrow-l-thin-fg_surface0-bg_trans":     { "format": "", "tooltip": false },
+    "custom/sep-arrow-l-fg_crust-bg_trans":             { "format": "", "tooltip": false },
+
+    "custom/expand_sign": {
+        "format": "exp\n  ",
+        "tooltip": false
+    },
+
+    // --- GROUP MODULES ---
+    "group/expandable-mon": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/expand_sign",
+            "disk",
+            "bluetooth"
+        ]
+    }
 }

@@ -63,7 +63,8 @@
         "scroll-step": 1,
         "tooltip": true,
         "tooltip-format": "Device: {node_name}",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "hyprpwcenter"
     },
     "network": {
         "interface": "enp9s0",
@@ -104,14 +105,14 @@
         "format": " {usage}%\n󰓅 {avg_frequency}GHz",
         "tooltip": true,
         "tooltip-format": "Usage: {usage}%\nLoad: {load}\nAvg Freq: {avg_frequency}GHz\nMax Freq: {max_frequency}GHz\nMin Freq: {min_frequency}GHz",
-        "on-click": "footclient btop"
+        "on-click-right": "footclient btop"
     },
     "memory": {
         "interval": 1,
         "format": " {percentage}%\n󰾆 {used:0.1f}G",
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB ({percentage}%)\nSwap: {swapUsed:0.1f}GB / {swapTotal:0.1f}GB ({swapPercentage}%)",
-        "on-click": "footclient btop"
+        "on-click-right": "footclient btop"
     },
     "disk": {
         "interval": 30,
@@ -119,7 +120,7 @@
         "unit": "GB",
         "tooltip": true,
         "tooltip-format": "Path: {path}\nTotal: {total}\nUsed: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)",
-        "on-click": "footclient btop",
+        "on-click-right": "footclient btop",
         "path": "/"
     },
     "bluetooth": {
@@ -130,7 +131,7 @@
         "tooltip-format": "Controller: {controller_alias}\nStatus: {status}",
         "tooltip-format-connected": "Controller: {controller_alias}\nConnections: {num_connections}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "󰂱 {device_alias} ({device_battery_percentage}% Battery)",
-        "on-click": "footclient bluetui"
+        "on-click-right": "footclient bluetui"
     },
 
     // --- SEPARATOR MODULES ---

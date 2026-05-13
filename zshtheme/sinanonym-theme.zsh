@@ -1,24 +1,20 @@
 zmodload zsh/datetime
 autoload -Uz add-zsh-hook vcs_info
-
 setopt PROMPT_SUBST
 PROMPT_EOL_MARK=""
-
 # ===== VCS CONFIG =====
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' max-exports 1
 zstyle ':vcs_info:git:*' formats ' %F{#6c7086}git:%F{#bac2de}%b%f'
 zstyle ':vcs_info:git:*' actionformats ' %F{#6c7086}git:%F{#bac2de}%b|%a%f'
-
 # ===== TIMER =====
 _custom_prompt_preexec() {
     __cmd_timer=$EPOCHREALTIME
 }
-
 # ===== PROMPT LOGIC =====
 _custom_prompt_precmd() {
-    # Save return value
     __last_exit_code=$?
+
     vcs_info
 
     # Execution Time
@@ -51,7 +47,6 @@ _custom_prompt_precmd() {
 %F{#6c7086}|%f %F{#cba6f7}%~%f %F{#6c7086}|%f %F{#6c7086}• %n • %D{%H:%M}%f${vcs_info_msg_0_}
 ${__transient_exit_status} \${__vi_prompt_color}\${__vi_prompt_symbol}%f "
 }
-
 # ===== VI-MODE INTEGRATION =====
 function zle-keymap-select {
     if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
@@ -69,16 +64,16 @@ function zle-keymap-select {
             __vi_prompt_color="%F{#cdd6f4}" 
         fi
     fi
-    zle reset-prompt
+
+    [[ -n $WIDGET ]] && zle reset-prompt
 }
 zle -N zle-keymap-select
 
 function zle-line-init {
-    echo -ne '\e[1 q' 
-    zle-keymap-select 'beam'
+    echo -ne '\e[1 q'
+    __vi_prompt_symbol="❯"
 }
 zle -N zle-line-init
-
 # ===== TRANSIENT PROMPT =====
 _transient_prompt_on_finish() {
     [[ -z $BUFFER ]] && return
@@ -87,12 +82,11 @@ _transient_prompt_on_finish() {
     if (( __last_exit_code != 0 )); then
         final_color="%F{#f38ba8}"
     fi
-
     PROMPT="${final_color}❯%f "
     RPROMPT=""
-    zle reset-prompt
-}
 
+    zle -R
+}
 add-zsh-hook preexec _custom_prompt_preexec
 add-zsh-hook precmd _custom_prompt_precmd
 zle -N zle-line-finish _transient_prompt_on_finish

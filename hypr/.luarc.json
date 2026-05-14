@@ -5,16 +5,40 @@
     ]
   },
   "diagnostics": {
-    "globals": ["hl", "V"]
+    "globals": [
+      "hl"
+    ]
   },
   "format": {
     "enable": true,
     "defaultConfig": {
+      "indent_style": "space",
+      "indent_size": "4",
+      "continuation_indent": "4",
+
+      "max_line_length": "80",
+      "break_all_list_when_line_exceed": "true",
+      "auto_collapse_lines": "false",
+
+      "align_call_args": "false",
+      "align_function_params": "true",
       "align_continuous_assign_statement": "true",
       "align_continuous_rect_table_field": "true",
       "align_array_table": "true",
-      "keep_simple_control_block_one_line": "true",
-      "max_line_length": "150"
+      "align_continuous_similar_call_args": "false",
+      "align_continuous_inline_comment": "true",
+
+      "align_continuous_line_space": "2",
+
+      "space_around_assign_operator": "true",
+      "space_after_comma": "true",
+      "space_after_comma_in_for_statement": "true",
+
+      "trailing_table_separator": "always",
+      "table_separator_style": "comma",
+      "quote_style": "double",
+
+      "keep_simple_control_block_one_line": "false"
     }
   }
 }

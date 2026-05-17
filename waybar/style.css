@@ -174,7 +174,6 @@ window#waybar {
 
 #expandable-mon:hover #custom-expand_sign,
 #expandable-mon:hover #custom-expand_sign label {
-    font-size: 0px;
     padding: 0px;
     margin: 0px;
     min-width: 0px;

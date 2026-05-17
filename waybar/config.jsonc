@@ -25,7 +25,7 @@
         "cpu",
         "memory",
         "network",
-        // "group/expandable-mon",
+        "group/expandable-mon",
         "custom/sep-curve-r-fg_mantle-bg_trans",
         "custom/sep-arrow-l-thin-fg_surface0-bg_trans",
         "custom/sep-arrow-l-fg_crust-bg_trans",

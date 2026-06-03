@@ -99,11 +99,6 @@ hl.window_rule({
     float = true,
 })
 hl.window_rule({
-    name = "paradox-launcher",
-    match = titled("^Paradox Launcher$", "^Europa Universalis IV$"),
-    float = true,
-})
-hl.window_rule({
     name = "steam-big-picture",
     match = { title = "^Steam Big Picture Mode$", },
     workspace = c.workspace.game,
@@ -267,6 +262,18 @@ hl.window_rule({
         800,
         600,
     },
+})
+
+-- Torrent
+hl.window_rule({
+    name = "qbittorrent-add-torrent-dialog",
+    match = {
+        class = [[^org\.qbittorrent\.qBittorrent$]],
+        title = [[negative:^qBittorrent v.*]],
+    },
+    float = true,
+    size = { 957, 768, },
+    center = true,
 })
 
 -- GIMP Dialogs

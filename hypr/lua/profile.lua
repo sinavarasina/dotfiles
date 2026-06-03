@@ -20,7 +20,8 @@ return {
     },
 
     monitors = {
-        "main",
+        "mi-g24i",
+        "fallback",
     },
 
     extra = {

@@ -1,14 +1,25 @@
 local M = {}
 
+local require = require
+
 function M.load(modules)
-    for _, module in ipairs(modules or {}) do
-        require(module)
+    if not modules then
+        return
+    end
+
+    for i = 1, #modules do
+        require(modules[i])
     end
 end
 
 function M.load_named(prefix, names)
-    for _, name in ipairs(names or {}) do
-        require(prefix .. "." .. name)
+    if not names then
+        return
+    end
+
+    local module_prefix = prefix .. "."
+    for i = 1, #names do
+        require(module_prefix .. names[i])
     end
 end
 

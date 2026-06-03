@@ -2,6 +2,9 @@ local sh = require("lua.core.shell")
 
 local M = {}
 
+local default_duration = 5000
+local concat = table.concat
+
 local icon = {
     info    = 1,
     warning = 2,
@@ -14,12 +17,18 @@ local color = {
     error   = "rgb(e12885)",
 }
 
+local function resolve(kind)
+    return icon[kind] or icon.info, color[kind] or color.info
+end
+
 local function push(kind, text, duration)
+    local icon_id, color_value = resolve(kind)
+
     hl.notification.create({
         text = text,
-        duration = duration or 5000,
-        icon = icon[kind] or icon.info,
-        color = color[kind] or color.info,
+        duration = duration or default_duration,
+        icon = icon_id,
+        color = color_value,
     })
 end
 
@@ -38,18 +47,20 @@ end
 function M.command(kind, text, opts)
     opts = opts or {}
 
+    local icon_id, color_value = resolve(kind)
     local message
+
     if opts.expand then
-        message = sh.double_quote(text)
+        message = sh.quote_expand(text)
     else
         message = sh.quote(text)
     end
 
-    return table.concat({
+    return concat({
         "hyprctl notify",
-        tostring(icon[kind] or icon.info),
-        tostring(opts.duration or 5000),
-        sh.quote(color[kind] or color.info),
+        tostring(icon_id),
+        tostring(opts.duration or default_duration),
+        sh.quote(color_value),
         message,
     }, " ")
 end

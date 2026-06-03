@@ -83,7 +83,7 @@
     path = ~/.cache/dunst.log
 
 # ===========================
-# COLORS — CATPPUCCIN MOCHA (Stealth/Kuudere Edit)
+# COLORS — CATPPUCCIN MOCHA
 # ===========================
 
 [urgency_low]

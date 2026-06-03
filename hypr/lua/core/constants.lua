@@ -1,5 +1,7 @@
 local M = {}
 
+local axis_step = 5
+
 M.mod = {
     main  = "SUPER",
     shift = "SHIFT",
@@ -15,10 +17,10 @@ M.direction = {
 }
 
 M.axis = {
-    left  = { x = -5, y = 0, },
-    right = { x = 5, y = 0, },
-    up    = { x = 0, y = -5, },
-    down  = { x = 0, y = 5, },
+    left  = { x = -axis_step, y = 0, },
+    right = { x = axis_step, y = 0, },
+    up    = { x = 0, y = -axis_step, },
+    down  = { x = 0, y = axis_step, },
 }
 
 M.layout = {

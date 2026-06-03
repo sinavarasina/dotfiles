@@ -1,4 +1,5 @@
 local home = assert(os.getenv("HOME"), "HOME is not set")
+local dotfiles = home .. "/dotfiles"
 
 return {
     home = home,
@@ -10,12 +11,11 @@ return {
 
     dir = {
         screenshots = home .. "/Pictures/Screenshots",
-        dotfiles    = home .. "/dotfiles",
+        dotfiles    = dotfiles,
     },
 
     file = {
-        wallpaper = home .. "/dotfiles/wallpapers/Yuki-Gentoo-wallpaper-r2.png",
-        icc       = home .. "/dotfiles/ColorProfile/G24i-lordkutang.icm",
+        wallpaper = dotfiles .. "/wallpapers/Yuki-Gentoo-wallpaper-r2.png",
         hypr_zoom = home .. "/Applications/hypr-zoom",
     },
 }

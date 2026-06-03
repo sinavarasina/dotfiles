@@ -3,10 +3,7 @@
 local path = require("lua.core.paths")
 local sh = require("lua.core.shell")
 
-local function exec_once(process, command)
-    command = command or process
-    hl.exec_cmd(string.format("pgrep -x %q >/dev/null || %s", process, command))
-end
+local exec_once = sh.exec_once
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")

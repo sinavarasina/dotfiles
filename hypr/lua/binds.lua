@@ -55,6 +55,7 @@ hl.bind(key(M, "period"), layout("move +col"))
 hl.bind(key(M, "comma"), layout("move -col"))
 hl.bind(key(M, c.mod.shift, "period"), layout("swapcol r"))
 hl.bind(key(M, c.mod.shift, "comma"), layout("swapcol l"))
+hl.bind(key(M, c.mod.alt, "Return"), layout("fit_into_view"))
 
 -- Monocle nav
 hl.bind(key(M, "bracketright"), layout("cyclenext"))

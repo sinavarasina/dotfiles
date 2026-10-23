@@ -2,8 +2,11 @@ typeset -U path PATH
 
 path=(
     "$HOME/.local/bin"
+    "$HOME/.local/share/soar/bin"
     "$HOME/.cargo/bin"
     "$HOME/Applications"
+    "$HOME/.pub-cache/bin"
+    "/opt/flutter/bin"
     $path
 )
 

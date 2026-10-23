@@ -9,9 +9,9 @@ hl.monitor({
     mode = mode,
     position = "auto",
     scale = 1,
-
     bitdepth = 10,
     icc = icc,
+    cm = "hdr",
 })
 
 -- hl.monitor({

@@ -7,6 +7,7 @@ setopt sharehistory
 setopt incappendhistory
 setopt histignorealldups
 setopt histignorespace
+setopt extendedglob
 setopt noequals
 setopt noclobber
 setopt noflowcontrol

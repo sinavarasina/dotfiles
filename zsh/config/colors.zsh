@@ -8,8 +8,4 @@ if [[ ! -f "$_dircolors_cache" || /etc/DIR_COLORS -nt "$_dircolors_cache" ]]; th
 fi
 
 source "$_dircolors_cache"
-
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='grep -F --color=auto'
-alias egrep='grep -E --color=auto'
+unset _dircolors_cache

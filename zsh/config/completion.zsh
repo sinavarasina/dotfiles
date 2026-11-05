@@ -1,12 +1,15 @@
 autoload -Uz compinit
 
 typeset _zcompdump="${ZDOTDIR}/.zcompdump"
+typeset -a _zcompdump_stale=( "$_zcompdump"(Nmh+24) )
 
-if [[ ! -f "$_zcompdump" || -n "$_zcompdump"(#qN.mh+24) ]]; then
+if [[ ! -f "$_zcompdump" || ${#_zcompdump_stale} -gt 0 ]]; then
     compinit -i -d "$_zcompdump"
 else
     compinit -C -i -d "$_zcompdump"
 fi
+
+unset _zcompdump _zcompdump_stale
 
 zmodload zsh/complist
 

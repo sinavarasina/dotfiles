@@ -2,4 +2,3 @@
 # SINA ZSH PROFILE
 #==============================================================================
 
-[[ -r "$ZDOTDIR/config/env.zsh" ]] && source "$ZDOTDIR/config/env.zsh"

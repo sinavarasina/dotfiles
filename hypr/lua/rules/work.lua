@@ -3,22 +3,44 @@
 local match = require("lua.core.match")
 local titled = match.titled
 
+local zoom_class = "^(zoom|Zoom Workplace)$"
+
 hl.window_rule({
-    name = "zoom-stayfocused",
-    match = {
-        class = "zoom",
-        initial_title = "menu window|meeting bottombar popup|sub menu window",
-    },
-    stay_focused = true,
+    name = "zoom-dialogs-float",
+    match = titled(zoom_class,
+        "negative:^(Zoom Workplace.*|Zoom Meeting|Zoom Cloud Meetings)$"),
+    float = true,
 })
 
 hl.window_rule({
-    name = "zoom-float",
+    name = "zoom-menus",
     match = {
-        class = "zoom",
-        initial_title = "menu window|Meeting|Meeting chat",
+        class = zoom_class,
+        initial_title = "^(|zoom|menu window|sub menu window|meeting bottombar popup)$",
     },
     float = true,
+    stay_focused = true,
+    no_blur = true,
+    no_shadow = true,
+    no_anim = true,
+    border_size = 0,
+})
+
+hl.window_rule({
+    name = "zoom-share-toolbar",
+    match = titled(zoom_class, "^(as_toolbar)$"),
+    float = true,
+    pin = true,
+    no_blur = true,
+    no_shadow = true,
+    no_anim = true,
+    border_size = 0,
+})
+
+hl.window_rule({
+    name = "zoom-meeting-inhibit-idle",
+    match = titled(zoom_class, "^(Zoom Meeting)$"),
+    idle_inhibit = "always",
 })
 
 hl.window_rule({

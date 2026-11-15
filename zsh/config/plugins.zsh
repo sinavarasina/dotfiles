@@ -14,5 +14,13 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit light-mode for \
-    zsh-users/zsh-completions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c7086"
+
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+
+zinit lucid wait for \
+    blockf zsh-users/zsh-completions \
+    hlissner/zsh-autopair \
+    atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    MattiaGaspa/gentoolinux-ohmyzsh \
+    atinit"zicompinit; zicdreplay" zsh-users/zsh-syntax-highlighting

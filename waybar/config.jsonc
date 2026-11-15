@@ -67,7 +67,6 @@
         "on-click-right": "hyprpwcenter"
     },
     "network": {
-        "interface": "enp9s0",
         "interval": 1,
         "format": " {bandwidthUpBytes}\n {bandwidthDownBytes}",
         "format-disconnected": "󰤭 0/0",

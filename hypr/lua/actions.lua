@@ -42,7 +42,7 @@ function M.color_picker()
     return function()
         sh.exec_chain({
             "area=$(slurp -p)",
-            [[hex=$(grim -g "$area" -t ppm - | convert - txt:- | sed -n '2s/.*\(#[0-9A-Fa-f]\{6,8\}\).*/\1/p')]],
+            [[hex=$(grim -g "$area" -t ppm - | magick - txt:- | sed -n '2s/.*\(#[0-9A-Fa-f]\{6,8\}\).*/\1/p')]],
             [[test -n "$hex"]],
             [[printf '%s' "$hex" | wl-copy]],
             notify.command("info", "$hex copied to clipboard", { expand = true, }),

@@ -1,0 +1,4 @@
+[submodule "sina-desktop-widget"]
+	path = sina-desktop-widget
+	url = git@github.com:sinavarasina/sina-desktop-widget.git
+	branch = main

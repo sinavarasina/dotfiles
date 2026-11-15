@@ -1,17 +1,10 @@
-# MPD runtime & database
 *.state
 mpd.db
 mpd/playlists/
-
-# ncmpcpp runtime & logs
 *.log
 ncmpcpp/lyrics/
-
-# Zsh completion & bytecode
 *.zwc
 .zcompdump*
 .zsh_history
-
-# Backups
 *.bak
 *~

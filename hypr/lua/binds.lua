@@ -178,7 +178,7 @@ hl.bind(key(M, c.mouse.left), window.drag(), { mouse = true, })
 hl.bind(key(M, c.mouse.right), window.resize(), { mouse = true, })
 
 -- UI toggles
-hl.bind(key(M, c.mod.alt, "B"), hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+-- hl.bind(key(M, c.mod.alt, "B"), hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 
 -- Screenshots & utils
 hl.bind(key(M, "print"), acts.screenshot_full())

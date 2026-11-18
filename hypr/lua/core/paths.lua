@@ -17,5 +17,6 @@ return {
     file = {
         wallpaper = dotfiles .. "/wallpapers/Yuki-Gentoo-wallpaper-r2.png",
         hypr_zoom = home .. "/Applications/hypr-zoom",
+        widget    = dotfiles .. "/sina-desktop-widget/target/release/sina-desktop-widget",
     },
 }

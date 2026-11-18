@@ -20,7 +20,7 @@ hl.bind(key(M, "C"), window.close())
 hl.bind(key(M, c.mod.shift, "C"), acts.force_kill_active())
 hl.bind(key(M, c.mod.alt, "F4"), hl.dsp.exit())
 hl.bind(key(M, "E"), hl.dsp.exec_cmd(app.file_manager))
-hl.bind(key(M, "R"), hl.dsp.exec_cmd(app.menu))
+-- hl.bind(key(M, "R"), hl.dsp.exec_cmd(app.menu))
 hl.bind(key(M, "W"), hl.dsp.exec_cmd(app.web_browser))
 hl.bind(key(M, c.mod.shift, "W"), hl.dsp.exec_cmd(app.web_browser_prv))
 
@@ -177,8 +177,14 @@ hl.bind(key(M, c.mouse.middle), window.pin())
 hl.bind(key(M, c.mouse.left), window.drag(), { mouse = true, })
 hl.bind(key(M, c.mouse.right), window.resize(), { mouse = true, })
 
--- UI toggles
--- hl.bind(key(M, c.mod.alt, "B"), hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+-- Widget overlays (sina-desktop-widget)
+hl.bind(key(M, "R"), hl.dsp.exec_cmd(app.widget.drun))
+hl.bind(key(M, "N"), hl.dsp.exec_cmd(app.widget.notifications))
+hl.bind(key(M, c.mod.shift, "N"), hl.dsp.exec_cmd(app.widget.dnd))
+hl.bind(key(M, "V"), hl.dsp.exec_cmd(app.widget.volume))
+hl.bind(key(M, "B"), hl.dsp.exec_cmd(app.widget.bluetooth))
+hl.bind(key(M, "M"), hl.dsp.exec_cmd(app.widget.mpris))
+hl.bind(key(M, "Escape"), hl.dsp.exec_cmd(app.widget.close))
 
 -- Screenshots & utils
 hl.bind(key(M, "print"), acts.screenshot_full())

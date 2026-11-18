@@ -11,10 +11,14 @@ local function foot_app(app_id, command)
     }, " ")
 end
 
+local function widget_cmd(subcmd)
+    return sh.quote(path.file.widget) .. " " .. subcmd
+end
+
 return {
     terminal        = terminal,
     file_manager    = "thunar",
-    menu            = "wofi --show drun --allow-images",
+    -- menu            = "wofi --show drun --allow-images",
     web_browser     = "firefox-bin",
     web_browser_prv = "firefox-bin -private-window",
     volume_manager  = "hyprpwcenter",
@@ -29,4 +33,14 @@ return {
 
     screen_zoom     = sh.quote(path.file.hypr_zoom) ..
         " -easing=InOutCubic -interp=Linear",
+
+    widget          = {
+        drun          = widget_cmd("drun"),
+        notifications = widget_cmd("notifications"),
+        dnd           = widget_cmd("dnd"),
+        volume        = widget_cmd("volume"),
+        bluetooth     = widget_cmd("bluetooth"),
+        mpris         = widget_cmd("mpris"),
+        close         = widget_cmd("close"),
+    },
 }

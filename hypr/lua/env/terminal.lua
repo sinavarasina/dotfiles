@@ -1,5 +1,8 @@
-local env = require("lua.core.env")
-local app = require("lua.core.apps")
+local core = require("lua.core")
+
+local env = core.env
+
+local app = core.app
 
 env.apply({
     { "TerminalEmulator", app.terminal, },

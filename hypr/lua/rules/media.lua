@@ -1,6 +1,7 @@
 -- lua/rules/media.lua — Multimedia and viewer rules
 
-local match = require("lua.core.match")
+local core = require("lua.core")
+local match = core.match
 local class = match.class
 local titled = match.titled
 
@@ -21,10 +22,7 @@ hl.window_rule({
     match = class("^(mpv)$"),
     float = true,
     center = true,
-    max_size = {
-        1920,
-        1080,
-    },
+    max_size = "monitor_w monitor_h",
     opacity = 1.0,
 })
 

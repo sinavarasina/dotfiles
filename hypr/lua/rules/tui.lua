@@ -1,6 +1,7 @@
 -- lua/rules/tui.lua — Floating TUI and custom script rules
 
-local match = require("lua.core.match")
+local core = require("lua.core")
+local match = core.match
 local class = match.class
 local titled = match.titled
 
@@ -18,14 +19,8 @@ hl.window_rule({
     name = "sptlrx-keybind",
     match = class("^(mpd_lyrics)$"),
     float = true,
-    size = {
-        380,
-        1053,
-    },
-    move = {
-        1539,
-        25,
-    },
+    size = "monitor_w*0.2 monitor_h-27",
+    move = "monitor_w-window_w-1 25",
 })
 
 hl.window_rule({
@@ -50,10 +45,7 @@ hl.window_rule({
         476,
         155,
     },
-    move = {
-        728,
-        28,
-    },
+    move = "(monitor_w-window_w)/2 28",
 })
 
 hl.window_rule({

@@ -1,4 +1,5 @@
 local sh = require("lua.core.shell")
+local palette = require("lua.core.palette")
 
 local M = {}
 
@@ -12,9 +13,9 @@ local icon = {
 }
 
 local color = {
-    info    = "rgb(86cecb)",
-    warning = "rgb(ffaa00)",
-    error   = "rgb(e12885)",
+    info    = palette.rgb(palette.alert_info),
+    warning = palette.rgb(palette.alert_warning),
+    error   = palette.rgb(palette.alert_error),
 }
 
 local function resolve(kind)

@@ -2,6 +2,7 @@
 
 local core = require("lua.core")
 local c = core.c
+local p = core.palette
 
 hl.config({
     general = {
@@ -9,10 +10,10 @@ hl.config({
         gaps_out = 1,
         border_size = 1,
         ["col.active_border"] = {
-            colors = { "rgb(cba6f7)", "rgb(313244)", },
+            colors = { p.rgb(p.mauve), p.rgb(p.surface1), },
             angle = 45,
         },
-        ["col.inactive_border"] = "rgb(181825)",
+        ["col.inactive_border"] = p.rgb(p.mantle),
         resize_on_border = true,
         allow_tearing = true,
         layout = c.layout.dwindle,
@@ -24,7 +25,7 @@ hl.config({
             enabled = true,
             range = 15,
             render_power = 2,
-            color = "rgba(11111baa)",
+            color = p.rgba(p.crust),
         },
         blur = {
             enabled = true,
@@ -41,6 +42,8 @@ hl.config({
         follow_mouse = 1,
         sensitivity = 0.0,
         accel_profile = "flat",
+        -- v0.57: first click on an unfocused window only focuses, no interaction
+        swallow_focus_click = true,
         touchpad = { natural_scroll = false, },
     },
 
@@ -49,7 +52,6 @@ hl.config({
         smart_split = true,
         smart_resizing = true,
         force_split = 0,
-        special_scale_factor = 0.8,
         permanent_direction_override = false,
         precise_mouse_move = true,
     },
@@ -65,6 +67,8 @@ hl.config({
         disable_hyprland_logo = true,
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
+        -- silence the "scale changed" popup on monitor hotplug/resolution change
+        disable_scale_notification = true,
     },
 
     render = {
@@ -79,6 +83,8 @@ hl.config({
         no_break_fs_vrr = 2,
         enable_hyprcursor = true,
         hide_on_touch = true,
+        -- v0.57: restore cursor position when a monitor (re)appears
+        warp_on_monitor_change = true,
     },
 
     xwayland = {

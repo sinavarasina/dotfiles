@@ -24,6 +24,19 @@ return {
         "fallback",
     },
 
+    rules = {
+        "workspace",
+        "global",
+        "media",
+        "browser",
+        "gaming",
+        "system",
+        "tui",
+        "work",
+        "torrent",
+        "gimp",
+    },
+
     extra = {
         -- "lua.extra.automount",
         "lua.extra.portal_workaround",

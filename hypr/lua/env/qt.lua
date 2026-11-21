@@ -1,4 +1,6 @@
-local env = require("lua.core.env")
+local core = require("lua.core")
+
+local env = core.env
 
 env.apply({
     { "QT_AUTO_SCREEN_SCALE_FACTOR",         "1", },

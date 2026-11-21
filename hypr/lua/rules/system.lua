@@ -1,6 +1,7 @@
 -- lua/rules/system.lua — System utility rules
 
-local match = require("lua.core.match")
+local core = require("lua.core")
+local match = core.match
 local class = match.class
 local titled = match.titled
 

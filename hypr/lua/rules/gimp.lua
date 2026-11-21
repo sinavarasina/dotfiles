@@ -1,6 +1,7 @@
 -- lua/rules/gimp.lua — GIMP dialog rules
 
-local match = require("lua.core.match")
+local core = require("lua.core")
+local match = core.match
 local titled = match.titled
 
 local gimp_class = "^([Gg]imp.*|org%.gimp%.GIMP)$"

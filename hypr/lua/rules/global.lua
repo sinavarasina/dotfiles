@@ -1,6 +1,7 @@
 -- lua/rules/global.lua — Global window rules
 
-local match = require("lua.core.match")
+local core = require("lua.core")
+local match = core.match
 local class = match.class
 
 hl.window_rule({

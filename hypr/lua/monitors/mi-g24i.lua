@@ -1,4 +1,8 @@
-local path = require("lua.core.paths")
+-- lua/monitors/mi-g24i.lua — Xiaomi Mi G24i (DP-1)
+
+local core = require("lua.core")
+
+local path = core.path
 
 local output = "desc:Xiaomi Corporation Mi Monitor 5790020017103"
 local mode = "1920x1080@180"
@@ -14,28 +18,6 @@ hl.monitor({
     cm = "hdr",
 })
 
--- hl.monitor({
---     output = output,
---     mode = mode,
---     position = "auto",
---     scale = 1,
--- })
---
--- hl.monitor({
---     output = output,
---     mode = mode,
---     position = "auto",
---     scale = 1,
---     bitdepth = 10,
---     cm = "auto",
--- })
---
--- hl.monitor({
---     output = output,
---     mode = mode,
---     position = "auto",
---     scale = 1,
---     bitdepth = 10,
---     cm = "hdr",
---     sdrbrightness = 1.1,
--- })
+-- Variants: drop `icc`/`cm`/`bitdepth` for plain SDR, or keep `bitdepth` +
+-- `cm = "auto"` (+ optional `sdrbrightness = 1.1`) for SDR-on-HDR-capable
+-- panels without the ICC profile.

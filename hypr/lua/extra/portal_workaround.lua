@@ -1,6 +1,8 @@
 -- lua/extra/portal_workaround.lua — XDPH restart workaround
 
-local sh = require("lua.core.shell")
+local core = require("lua.core")
+
+local sh = core.shell
 
 hl.on("hyprland.start", function()
     sh.exec([[

@@ -1,6 +1,8 @@
 -- lua/extra/automount.lua — disk automount
 
-local sh = require("lua.core.shell")
+local core = require("lua.core")
+
+local sh = core.shell
 
 local devices = {
     "27ccb7d1-49c2-4d6e-9e4f-a3249383547b",

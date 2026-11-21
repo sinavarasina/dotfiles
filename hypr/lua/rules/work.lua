@@ -1,6 +1,7 @@
 -- lua/rules/work.lua — Academic and work app rules
 
-local match = require("lua.core.match")
+local core = require("lua.core")
+local match = core.match
 local titled = match.titled
 
 local zoom_class = "^(zoom|Zoom Workplace)$"

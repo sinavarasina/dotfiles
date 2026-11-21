@@ -31,9 +31,12 @@ M.layout = {
 }
 
 M.workspace = {
-    special_name = "magic",
-    special      = "special:magic",
-    game         = "10",
+    special_name  = "magic",
+    special       = "special:magic",
+    game          = "10",
+
+    -- Adaptive gap scaling for special workspaces (usable fraction)
+    special_scale = 0.8,
 }
 
 M.fullscreen_state = {

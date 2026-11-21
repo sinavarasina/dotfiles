@@ -1,16 +1,8 @@
 -- lua/rules/init.lua — Window rule module loader
 
-local module = require("lua.core.module")
+local profile = require("lua.profile")
+local core = require("lua.core")
 
-module.load_named("lua.rules", {
-    "workspace",
-    "global",
-    "media",
-    "browser",
-    "gaming",
-    "system",
-    "tui",
-    "work",
-    "torrent",
-    "gimp",
-})
+local module = core.module
+
+module.load_named("lua.rules", profile.rules)

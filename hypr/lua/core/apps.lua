@@ -43,5 +43,6 @@ return {
         mpris         = widget_cmd("mpris"),
         close         = widget_cmd("close"),
         disk          = widget_cmd("disk"),
+        menu          = widget_cmd("menu"),
     },
 }

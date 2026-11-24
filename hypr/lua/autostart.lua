@@ -15,6 +15,4 @@ hl.on("hyprland.start", function()
     exec_once("sina-desktop-widget", path.file.widget)
     exec_once("thunar", "thunar --daemon")
     exec_once("foot", "foot --server")
-    exec_once("swaybg",
-        "swaybg -i " .. sh.quote(path.file.wallpaper) .. " -m fill")
 end)

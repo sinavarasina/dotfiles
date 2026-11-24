@@ -1,0 +1,8 @@
+[Sound Theme]
+Name=Yuki Nagato (Extended Voice)
+Comment=Extended Yuki Nagato XDG sound theme including ultra-short voice cues on notifications, dialogs, and hardware events.
+Inherits=freedesktop
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

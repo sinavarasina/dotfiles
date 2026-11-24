@@ -1,0 +1,8 @@
+[Sound Theme]
+Name=Yuki Nagato (Hybrid)
+Comment=Modern balanced XDG sound theme: crisp Chokuretsu/Gekitou UI SFX for frequent notifications and concise Yuki Nagato humanoid-interface voice cues for system lifecycle events.
+Inherits=freedesktop
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

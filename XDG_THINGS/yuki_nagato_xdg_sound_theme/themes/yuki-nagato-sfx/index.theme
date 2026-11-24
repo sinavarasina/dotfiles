@@ -1,0 +1,8 @@
+[Sound Theme]
+Name=Yuki Nagato (Pure SFX)
+Comment=Pure minimalist UI sound effect theme from Suzumiya Haruhi no Chokuretsu & Gekitou without voice lines.
+Inherits=freedesktop
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

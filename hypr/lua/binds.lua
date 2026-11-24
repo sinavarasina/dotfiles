@@ -139,6 +139,7 @@ hl.bind(key(mod, "B"), dsp.exec_cmd(app.widget.bluetooth))
 hl.bind(key(mod, "M"), dsp.exec_cmd(app.widget.mpris))
 hl.bind(key(mod, "Escape"), dsp.exec_cmd(app.widget.close))
 hl.bind(key(mod, ctrl, "M"), dsp.exec_cmd(app.widget.disk))
+hl.bind(key(mod, alt, "M"), dsp.exec_cmd(app.widget.menu))
 
 -- Screenshots & utils
 hl.bind(key(mod, "print"), acts.screenshot_full())
